@@ -10,9 +10,10 @@ provider "dnsimple" {
 resource "tls_private_key" "ca" {
   algorithm = "ECDSA"
   ecdsa_curve = "P384"
-  provisioner "local-exec" {
-    command = "echo \"${tls_private_key.ca.private_key_pem}\" > ca.key"
-  }
+}
+
+output "ca_key" {
+  value = "${tls_private_key.ca.private_key_pem}"
 }
 
 resource "tls_self_signed_cert" "ca" {
@@ -25,10 +26,10 @@ resource "tls_self_signed_cert" "ca" {
     common_name = "${var.cluster_name}.${var.dnsimple_domain}"
     organization = "&yet, LLC"
   }
+}
 
-  provisioner "local-exec" {
-    command = "echo \"${tls_self_signed_cert.ca.cert_pem}\" > ca.pem"
-  }
+output "ca_cert" {
+  value = "${tls_self_signed_cert.ca.cert_pem}"
 }
 
 resource "tls_private_key" "server" {

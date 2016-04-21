@@ -36,3 +36,15 @@ write_files:
     owner: root
     encoding: base64
     content: ${cert}
+  - path: /etc/ssl/etcd/client.pem
+    permissions: 0644
+    owner: root
+    encoding: base64
+    content: ${client}
+  - path: /etc/profile.d/etcdctl_env.sh
+    permissions: 0755
+    owner: root
+    content: |
+      export ETCDCTL_CERT_FILE=/etc/ssl/etcd/client.pem
+      export ETCDCTL_KEY_FILE=/etc/ssl/etcd/key.pem
+      export ETCDCTL_CA_FILE=/etc/ssl/etcd/ca.pem

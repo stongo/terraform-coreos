@@ -58,6 +58,16 @@ resource "tls_locally_signed_cert" "server" {
   validity_period_hours = 43800
 }
 
+resource "tls_locally_signed_cert" "client" {
+  count = "${var.instance_count}"
+  cert_request_pem = "${element(tls_cert_request.server.*.cert_request_pem, count.index)}"
+  ca_key_algorithm = "${tls_private_key.ca.algorithm}"
+  ca_private_key_pem = "${tls_private_key.ca.private_key_pem}"
+  ca_cert_pem = "${tls_self_signed_cert.ca.cert_pem}"
+  allowed_uses = ["key_encipherment", "client_auth"]
+  validity_period_hours = 43800
+}
+
 resource "template_file" "member" {
   count = "${var.instance_count}"
   template = "${file("cloud-config.tpl")}"
@@ -67,6 +77,7 @@ resource "template_file" "member" {
     ca = "${base64encode(tls_self_signed_cert.ca.cert_pem)}"
     key = "${base64encode(element(tls_private_key.server.*.private_key_pem, count.index))}"
     cert = "${base64encode(element(tls_locally_signed_cert.server.*.cert_pem, count.index))}"
+    client = "${base64encode(element(tls_locally_signed_cert.client.*.cert_pem, count.index))}"
   }
 }
 

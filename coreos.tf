@@ -79,6 +79,9 @@ resource "template_file" "member" {
     key = "${base64encode(element(tls_private_key.server.*.private_key_pem, count.index))}"
     cert = "${base64encode(element(tls_locally_signed_cert.server.*.cert_pem, count.index))}"
     client = "${base64encode(element(tls_locally_signed_cert.client.*.cert_pem, count.index))}"
+    vault_url = "${var.vault_url}"
+    domain_key = "${base64encode(file(var.domain_key))}"
+    domain_cert = "${base64encode(file(var.domain_cert))}"
   }
 }
 
@@ -97,6 +100,15 @@ resource "dnsimple_record" "hostnames" {
   count = "${var.instance_count}"
   domain = "${var.dnsimple_domain}"
   name = "${format("${var.cluster_name}-%02d", count.index)}"
+  value = "${element(digitalocean_droplet.member.*.ipv4_address, count.index)}"
+  type = "A"
+  ttl = 60
+}
+
+resource "dnsimple_record" "vault" {
+  count = "${var.instance_count}"
+  domain = "${var.dnsimple_domain}"
+  name = "vault"
   value = "${element(digitalocean_droplet.member.*.ipv4_address, count.index)}"
   type = "A"
   ttl = 60

@@ -42,3 +42,16 @@ variable "instance_count" {
   default = "3"
   description = "number of instances to create and add to the cluster"
 }
+
+variable "vault_url" {
+  default = "https://releases.hashicorp.com/vault/0.5.2/vault_0.5.2_linux_amd64.zip"
+  description = "url to download the (zipped) vault binary from"
+}
+
+variable "domain_key" {
+  description = "path to file containing private key for valid domain certificate"
+}
+
+variable "domain_cert" {
+  description = "path to file containing a valid domain certificate"
+}

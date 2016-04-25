@@ -18,8 +18,15 @@ coreos:
   units:
     - name: etcd2.service
       command: start
-    - name: fleet.service
+    - name: vault.service
       command: start
+      content: |
+        [Unit]
+        Description="Vault server"
+        [Service]
+        ExecStartPre=/bin/bash -c '[ ! -f /srv/vault ] && (cd /tmp; curl -qO ${vault_url}; unzip -d /srv vault*.zip) || true'
+        ExecStart=/srv/vault server -config /etc/vault.hcl
+        Restart=always
 write_files:
   - path: /etc/ssl/etcd/ca.pem
     permissions: 0644
@@ -48,3 +55,30 @@ write_files:
       export ETCDCTL_CERT_FILE=/etc/ssl/etcd/client.pem
       export ETCDCTL_KEY_FILE=/etc/ssl/etcd/key.pem
       export ETCDCTL_CA_FILE=/etc/ssl/etcd/ca.pem
+  - path: /etc/ssl/${domain}.pem
+    permissions: 0644
+    owner: root
+    encoding: base64
+    content: ${domain_cert}
+  - path: /etc/ssl/${domain}.key
+    permissions: 0644
+    owner: root
+    encoding: base64
+    content: ${domain_key}
+  - path: /etc/vault.hcl
+    permissions: 0644
+    owner: root
+    content: |
+      backend "etcd" {
+        address = "http://127.0.0.1:2379"
+        advertise_addr = "https://${name}.${domain}:8200"
+        tls_ca_file = "/etc/ssl/etcd/ca.pem"
+        tls_key_file = "/etc/ssl/etcd/key.pem"
+        tls_cert_file = "/etc/ssl/etcd/client.pem"
+      }
+
+      listener "tcp" {
+        address = "0.0.0.0:8200"
+        tls_cert_file = "/etc/ssl/${domain}.pem"
+        tls_key_file = "/etc/ssl/${domain}.key"
+      }

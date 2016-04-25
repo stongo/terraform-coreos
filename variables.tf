@@ -3,8 +3,22 @@ variable "cluster_name" {
   description = "name for the cluster to create. hosts will have hostnames ${cluster-name}-##"
 }
 
+variable "master_name" {
+  default = "kube-master"
+  description = "name for the kubernetes master to create. hosts will have hostnames ${cluster-name}-##"
+}
+
+variable "worker_name" {
+  default = "etcd"
+  description = "name for the kubernetes worker to create. hosts will have hostnames ${cluster-name}-##"
+}
+
 variable "do_token" {
   description = "api token for digitalocean"
+}
+
+variable "packet_token" {
+  description = "api token for packet"
 }
 
 variable "dnsimple_token" {
@@ -33,25 +47,32 @@ variable "instance_size" {
   description = "node size to create"
 }
 
-variable "instance_region" {
+variable "instance_do_region" {
   default = "nyc3"
   description = "region in which to create new instances"
 }
 
-variable "instance_count" {
+variable "instance_packet_region" {
+  default = "ewr1"
+  description = "region in which to create new instances"
+}
+
+variable "etcd_count" {
   default = "3"
-  description = "number of instances to create and add to the cluster"
+  description = "number of instances to create and add to the etcd cluster"
 }
 
-variable "vault_url" {
-  default = "https://releases.hashicorp.com/vault/0.5.2/vault_0.5.2_linux_amd64.zip"
-  description = "url to download the (zipped) vault binary from"
+variable "master_count" {
+  default = "1"
+  description = "number of instances to create and add to the kubernetes master cluster"
 }
 
-variable "domain_key" {
-  description = "path to file containing private key for valid domain certificate"
+variable "worker_count" {
+  default = "2"
+  description = "number of instances to create and add to the kubernetes worker cluster"
 }
 
-variable "domain_cert" {
-  description = "path to file containing a valid domain certificate"
+variable "reboot_strategy" {
+  default = "etcd-lock"
+  description = "coreos reboot strategy"
 }

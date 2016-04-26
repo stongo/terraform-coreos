@@ -16,9 +16,14 @@ coreos:
   units:
     - name: etcd2.service
       command: start
+      drop-ins:
+        - name: "40-phone-home.conf"
+          content: |
+            [Unit]
+            Requires=oem-phone-home.service
+            After=oem-phone-home.service
     - name: flanneld.service
       command: start
-      after: etcd2
       drop-ins:
         - name: "40-packet-dependency.conf"
           content: |
@@ -124,6 +129,8 @@ coreos:
       content: |
         [Unit]
         Description="creates required kubernetes master certs"
+        Requires=docker.service
+        After=docker.service
         [Service]
         ExecStart=/etc/kubernetes/ssl/create_certs.sh
         RemainAfterExit=yes

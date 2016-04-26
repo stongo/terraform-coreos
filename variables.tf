@@ -29,23 +29,27 @@ variable "reboot_strategy" {
   description = "coreos reboot strategy"
 }
 
-variable "instance_size" {
-  default = "512mb"
-  description = "node size to create"
+variable "instance_type" {
+  default = "baremetal_0"
+  description = "node type to create"
 }
 
-variable "instance_region" {
-  default = "nyc3"
-  description = "region in which to create new instances"
+variable "instance_facility" {
+  default = "ewr1"
+  description = "facility in which to create new instances"
 }
 
-variable "do_token" {
-  description = "api token for digitalocean"
-}
-
-# variable "packet_token" {
-#   description = "api token for packet"
+# variable "do_token" {
+#   description = "api token for digitalocean"
 # }
+
+variable "packet_token" {
+  description = "api token for packet"
+}
+
+variable "packet_project" {
+  description = "project in packet where servers should be created"
+}
 
 variable "dnsimple_token" {
   description = "api token for dnsimple"
@@ -64,13 +68,13 @@ variable "ssh_fingerprint" {
 }
 
 ## provider initialization goes here
-provider "digitalocean" {
-  token = "${var.do_token}"
-}
-
-# provider "packet" {
-#   token = "${var.packet_token}"
+# provider "digitalocean" {
+#   token = "${var.do_token}"
 # }
+
+provider "packet" {
+  auth_token = "${var.packet_token}"
+}
 
 provider "dnsimple" {
   email = "${var.dnsimple_email}"

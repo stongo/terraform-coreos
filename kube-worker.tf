@@ -4,27 +4,36 @@ resource "template_file" "worker" {
   vars {
     domain = "${var.dnsimple_domain}"
     name = "${format("${var.worker_name}-%02d", count.index)}"
-    api_servers = "${join(",", formatlist("https://%s:443", digitalocean_droplet.master.*.ipv4_address_private))}`"
+    api_servers = "${join(",", formatlist("https://%s:443", packet_device.master.*.network.2.address))}`"
     reboot_strategy = "${var.reboot_strategy}"
   }
 }
 
-resource "digitalocean_droplet" "worker" {
+resource "packet_device" "worker" {
   count = "${var.worker_count}"
-  name = "${format("${var.worker_name}-%02d", count.index)}.${var.dnsimple_domain}"
-  image = "coreos-${var.coreos_channel}"
-  region = "${var.instance_region}"
-  size = "${var.instance_size}"
-  ssh_keys = ["${var.ssh_fingerprint}"]
+  hostname = "${format("${var.worker_name}-%02d", count.index)}.${var.dnsimple_domain}"
+  project_id = "${var.packet_project}"
+  operating_system = "coreos_${var.coreos_channel}"
+  facility = "${var.instance_facility}"
+  plan = "${var.instance_type}"
+  billing_cycle = "hourly"
   user_data = "${element(template_file.worker.*.rendered, count.index)}"
-  private_networking = "true"
 }
 
 resource "dnsimple_record" "worker" {
   count = "${var.worker_count}"
   domain = "${var.dnsimple_domain}"
   name = "${format("${var.worker_name}-%02d", count.index)}"
-  value = "${element(digitalocean_droplet.worker.*.ipv4_address, count.index)}"
+  value = "${element(packet_device.worker.*.network.0.address, count.index)}"
+  type = "A"
+  ttl = 60
+}
+
+resource "dnsimple_record" "worker_rr" {
+  count = "${var.worker_count}"
+  domain = "${var.dnsimple_domain}"
+  name = "worker"
+  value = "${element(packet_device.worker.*.network.0.address, count.index)}"
   type = "A"
   ttl = 60
 }

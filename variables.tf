@@ -57,10 +57,6 @@ variable "instance_packet_region" {
   description = "region in which to create new instances"
 }
 
-variable "packet_project_id" {
-  description = "packet project id to create servers in"
-}
-
 variable "etcd_count" {
   default = "3"
   description = "number of instances to create and add to the etcd cluster"

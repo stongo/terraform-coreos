@@ -58,12 +58,3 @@ resource "dnsimple_record" "etcd_client_discovery" {
   type = "SRV"
   ttl = 60
 }
-
-resource "dnsimple_record" "etcd_client_ssl_discovery" {
-  count = "${var.etcd_count}"
-  domain = "${var.dnsimple_domain}"
-  name = "_etcd-client-ssl._tcp"
-  value = "0 2379 ${format("${var.cluster_name}-%02d", count.index)}.${var.dnsimple_domain}"
-  type = "SRV"
-  ttl = 60
-}

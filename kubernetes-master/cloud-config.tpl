@@ -9,6 +9,14 @@ coreos:
         interface: $public_ipv4
         etcd_endpoints: ${etcd_endpoints}
     units:
+        - name: etcd2.service
+          command: start
+          drop-ins:
+            - name: "40-packet-dependency.conf"
+              content: |
+                [Unit]
+                After=oem-phone-home.service
+                Requires=oem-phone-home.service
         - name: flanneld.service
           command: start
           after: etcd2

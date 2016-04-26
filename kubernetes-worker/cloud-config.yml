@@ -1,138 +1,117 @@
 #cloud-config
 coreos:
-    update:
-        reboot-strategy: ${reboot_strategy}
-    etcd2:
-        discovery-srv: ${domain}
-        proxy: on
-    flannel:
-        interface: $public_ipv4
-    units:
-        - name: etcd2.service
-          command: start
-          drop-ins:
-            - name: "40-packet-dependency.conf"
-              content: |
-                [Unit]
-                After=oem-phone-home.service
-                Requires=oem-phone-home.service
-        - name: flanneld.service
-          command: start
-          drop-ins:
-            - name: "40-packet-dependency.conf"
-              content: |
-                [Unit]
-                After=oem-phone-home.service
-                Requires=oem-phone-home.service
-        - name: docker.service
-          drop-ins:
-            - name: "40-flannel.conf"
-              content: |
-                [Unit]
-                Requires=flanneld.service
-                After=oem-phone-home.service
-                Requires=oem-phone-home.service
-                After=flanneld.service
-        - name: kube-proxy.service
-          command: start
-          content: |
-            [Unit]
-            Description="Kubernetes Proxy"
-            After=oem-phone-home.service
-            Requires=oem-phone-home.service
-            Requires=flanneld.service
-            After=flanneld.service
-            [Service]
-            TimeoutStartSec=300
-            ExecStartPre=/bin/docker pull quay.io/coreos/hyperkube:v1.2.0_coreos.0
-            ExecStart=/bin/docker run --rm --name kube-proxy --privileged --net host \
-              -v /usr/share/ca-certificates:/etc/ssl/certs:ro \
-              -v /etc/kubernetes/worker-kubeconfig.yaml:/etc/kubernetes/worker-kubeconfig.yaml:ro \
-              -v /etc/kubernetes/ssl:/etc/kubernetes/ssl:ro \
-              quay.io/coreos/hyperkube:v1.2.0_coreos.0 \
-              /hyperkube \
-              proxy \
-              --master=https://147.75.195.135 \
-              --kubeconfig=/etc/kubernetes/worker-kubeconfig.yaml \
-              --proxy-mode=iptables
-            ExecStop=/bin/docker stop -t 2 kube-proxy
-        - name: kubelet.service
-          command: start
-          content: |
-            [Unit]
-            Description="Kubelet Service"
-            Requires=flanneld.service
-            After=oem-phone-home.service
-            After=kubernetes-certs.service
-            Requires=oem-phone-home.service
-            After=flanneld.service
-            [Service]
-            ExecStartPre=/usr/bin/mkdir -p /etc/kubernetes/manifests
+  update:
+    reboot-strategy: ${reboot_strategy}
+  etcd2:
+    discovery-srv: ${domain}
+    proxy: on
+  flannel:
+    interface: $public_ipv4
+    etcd_endpoints: http://127.0.0.1:2379
+  units:
+    - name: etcd2.service
+      command: start
+    - name: flanneld.service
+      command: start
+    - name: docker.service
+      drop-ins:
+      - name: "40-flannel.conf"
+        content: |
+          [Unit]
+          Requires=flanneld.service
+          After=flanneld.service
+    - name: kube-proxy.service
+      command: start
+      content: |
+        [Unit]
+        Description="Kubernetes Proxy"
+        Requires=flanneld.service
+        After=flanneld.service
+        [Service]
+        TimeoutStartSec=300
+        ExecStartPre=/bin/docker pull quay.io/coreos/hyperkube:v1.2.0_coreos.0
+        ExecStart=/bin/docker run --rm --name kube-proxy --privileged --net host \
+        -v /usr/share/ca-certificates:/etc/ssl/certs:ro \
+        -v /etc/kubernetes/worker-kubeconfig.yaml:/etc/kubernetes/worker-kubeconfig.yaml:ro \
+        -v /etc/kubernetes/ssl:/etc/kubernetes/ssl:ro \
+        quay.io/coreos/hyperkube:v1.2.0_coreos.0 \
+        /hyperkube \
+        proxy \
+        --master=https://147.75.195.135 \
+        --kubeconfig=/etc/kubernetes/worker-kubeconfig.yaml \
+        --proxy-mode=iptables
+        ExecStop=/bin/docker stop -t 2 kube-proxy
+    - name: kubelet.service
+      command: start
+      content: |
+        [Unit]
+        Description="Kubelet Service"
+        Requires=flanneld.service
+        After=kubernetes-certs.service
+        After=flanneld.service
+        [Service]
+        ExecStartPre=/usr/bin/mkdir -p /etc/kubernetes/manifests
 
-            Environment=KUBELET_VERSION=v1.2.0_coreos.0
-            ExecStart=/usr/lib/coreos/kubelet-wrapper \
-              --api-servers=https://147.75.195.135 \
-              --register-node=true \
-              --allow-privileged=true \
-              --config=/etc/kubernetes/manifests \
-              --hostname-override=$public_ipv4 \
-              --cluster-domain=cluster.local \
-              --kubeconfig=/etc/kubernetes/worker-kubeconfig.yaml \
-              --tls-cert-file=/etc/kubernetes/ssl/kube-1-worker.pem \
-              --tls-private-key-file=/etc/kubernetes/ssl/kube-1-worker-key.pem \
-              --node-ip=$public_ipv4
-            Restart=always
-            RestartSec=10
-            [Install]
-            WantedBy=multi-user.target
-        - name: kubernetes-certs.service
-          command: start
-          content: |
-            [Unit]
-            Description="creates required kubernetes worker certs"
-            After=oem-phone-home.service
-            Before=kube-proxy.service
-            Requires=oem-phone-home.service
-
-            [Service]
-            ExecStart=/etc/kubernetes/ssl/create_certs.sh
-            RemainAfterExit=yes
-            Type=oneshot
-        - name: sshd.socket
-          command: restart
-          content: |
-            [Socket]
-            ListenStream=2042
-            Accept=yes
-        - name: settimezone.service
-          command: start
-          content: |
-            [Unit]
-            Description=Set the timezone
-
-            [Service]
-            ExecStart=/usr/bin/timedatectl set-timezone UTC
-            RemainAfterExit=yes
-            Type=oneshot
+        Environment=KUBELET_VERSION=v1.2.0_coreos.0
+        ExecStart=/usr/lib/coreos/kubelet-wrapper \
+        --api-servers=${api_servers} \
+        --register-node=true \
+        --allow-privileged=true \
+        --config=/etc/kubernetes/manifests \
+        --hostname-override=$public_ipv4 \
+        --cluster-domain=cluster.local \
+        --kubeconfig=/etc/kubernetes/worker-kubeconfig.yaml \
+        --tls-cert-file=/etc/kubernetes/ssl/kube-1-worker.pem \
+        --tls-private-key-file=/etc/kubernetes/ssl/kube-1-worker-key.pem \
+        --node-ip=$public_ipv4
+        Restart=always
+        RestartSec=10
+        [Install]
+        WantedBy=multi-user.target
+    - name: kubernetes-certs.service
+      command: start
+      content: |
+        [Unit]
+        Description="creates required kubernetes worker certs"
+        Before=kube-proxy.service
+        [Service]
+        ExecStart=/etc/kubernetes/ssl/create_certs.sh
+        RemainAfterExit=yes
+        Type=oneshot
+    - name: sshd.socket
+      command: restart
+      content: |
+        [Socket]
+        ListenStream=2042
+        Accept=yes
+    - name: settimezone.service
+      command: start
+      content: |
+        [Unit]
+        Description=Set the timezone
+        [Service]
+        ExecStart=/usr/bin/timedatectl set-timezone UTC
+        RemainAfterExit=yes
+        Type=oneshot
 write_files:
   - path: /etc/kubernetes/worker-kubeconfig.yaml
     content: |
       apiVersion: v1
       kind: Config
       clusters:
-      - name: local
-        cluster:
-          certificate-authority: /etc/kubernetes/ssl/ca.pem
+        - name: local
+          cluster:
+            certificate-authority: /etc/kubernetes/ssl/ca.pem
       users:
-      - name: kubelet
-        user:
-          client-certificate: /etc/kubernetes/ssl/kube-1-worker.pem
-          client-key: /etc/kubernetes/ssl/kube-1-worker-key.pem
+        - name: kubelet
+          user:
+            client-certificate: /etc/kubernetes/ssl/kube-1-worker.pem
+            client-key: /etc/kubernetes/ssl/kube-1-worker-key.pem
       contexts:
-      - context:
-          cluster: local
-          user: kubelet
-        name: kubelet-context
+        - context:
+            cluster: local
+            user: kubelet
+          name: kubelet-context
       current-context: kubelet-context
   - path: /etc/ntp.conf
     content: |

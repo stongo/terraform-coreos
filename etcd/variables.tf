@@ -57,6 +57,10 @@ variable "instance_packet_region" {
   description = "region in which to create new instances"
 }
 
+variable "packet_project_id" {
+  description = "packet project id to create servers in"
+}
+
 variable "etcd_count" {
   default = "3"
   description = "number of instances to create and add to the etcd cluster"
@@ -76,3 +80,9 @@ variable "reboot_strategy" {
   default = "etcd-lock"
   description = "coreos reboot strategy"
 }
+
+variable "instance_size" {
+  default = "512mb"
+  description = "size of digital ocean droplet"
+}
+

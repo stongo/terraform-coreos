@@ -9,7 +9,7 @@ variable "master_name" {
 }
 
 variable "worker_name" {
-  default = "etcd"
+  default = "kube-worker"
   description = "name for the kubernetes worker to create. hosts will have hostnames ${cluster-name}-##"
 }
 

@@ -12,7 +12,7 @@ resource "template_file" "worker" {
 
 resource "digitalocean_droplet" "worker" {
   count = "${var.worker_count}"
-  name = "${format("${var.master_name}-%02d", count.index)}.${var.dnsimple_domain}"
+  name = "${format("${var.worker_name}-%02d", count.index)}.${var.dnsimple_domain}"
   image = "coreos-${var.coreos_channel}"
   region = "${var.instance_do_region}"
   size = "${var.instance_size}"

@@ -11,7 +11,7 @@ coreos:
     listen-client-urls: http://127.0.0.1:2379,http://$private_ipv4:2379
     listen-peer-urls: http://$private_ipv4:2380
   flannel:
-    interface: $public_ipv4
+    interface: $private_ipv4
     etcd_endpoints: http://127.0.0.1:2379
   units:
     - name: etcd2.service
@@ -59,7 +59,7 @@ coreos:
         --allow-privileged=true \
         --portal_net=172.16.0.0/24 \
         --secure-port=443 \
-        --advertise-address=$public_ipv4 \
+        --advertise-address=$private_ipv4 \
         --admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota \
         --tls-cert-file=/etc/kubernetes/ssl/apiserver.pem \
         --tls-private-key-file=/etc/kubernetes/ssl/apiserver-key.pem \
@@ -241,6 +241,8 @@ write_files:
       DNS.2 = kubernetes.default
       DNS.3 = kubernetes.default.svc
       DNS.4 = kubernetes.default.svc.cluster.local
+      DNS.5 = master-internal.${domain}
+      DNS.6 = master.${domain}
       IP.1 = $public_ipv4
       IP.2 = $private_ipv4
       IP.3 = 127.0.0.1

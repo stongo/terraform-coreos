@@ -6,7 +6,7 @@ coreos:
     discovery-srv: ${domain}
     proxy: on
   flannel:
-    interface: $public_ipv4
+    interface: $private_ipv4
     etcd_endpoints: http://127.0.0.1:2379
   units:
     - name: etcd2.service
@@ -37,7 +37,7 @@ coreos:
         quay.io/coreos/hyperkube:v1.2.0_coreos.0 \
         /hyperkube \
         proxy \
-        --master=https://147.75.195.135 \
+        --master=https://master-internal.${domain} \
         --kubeconfig=/etc/kubernetes/worker-kubeconfig.yaml \
         --proxy-mode=iptables
         ExecStop=/bin/docker stop -t 2 kube-proxy
@@ -54,16 +54,16 @@ coreos:
 
         Environment=KUBELET_VERSION=v1.2.0_coreos.0
         ExecStart=/usr/lib/coreos/kubelet-wrapper \
-        --api-servers=${api_servers} \
+        --api-servers=https://master-internal.${domain} \
         --register-node=true \
         --allow-privileged=true \
         --config=/etc/kubernetes/manifests \
-        --hostname-override=$public_ipv4 \
+        --hostname-override=${name} \
         --cluster-domain=cluster.local \
         --kubeconfig=/etc/kubernetes/worker-kubeconfig.yaml \
         --tls-cert-file=/etc/kubernetes/ssl/kube-1-worker.pem \
         --tls-private-key-file=/etc/kubernetes/ssl/kube-1-worker-key.pem \
-        --node-ip=$public_ipv4
+        --node-ip=$private_ipv4
         Restart=always
         RestartSec=10
         [Install]

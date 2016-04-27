@@ -37,6 +37,15 @@ resource "dnsimple_record" "master_rr" {
   ttl = 60
 }
 
+resource "dnsimple_record" "master_internal_rr" {
+  count = "${var.master_count}"
+  domain = "${var.dnsimple_domain}"
+  name = "master-internal"
+  value = "${element(packet_device.master.*.network.2.address, count.index)}"
+  type = "A"
+  ttl = 60
+}
+
 resource "dnsimple_record" "server_discovery" {
   count = "${var.master_count}"
   domain = "${var.dnsimple_domain}"

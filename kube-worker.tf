@@ -4,7 +4,6 @@ resource "template_file" "worker" {
   vars {
     domain = "${var.dnsimple_domain}"
     name = "${format("${var.worker_name}-%02d", count.index)}"
-    api_servers = "${join(",", formatlist("https://%s:443", packet_device.master.*.network.2.address))}`"
     reboot_strategy = "${var.reboot_strategy}"
   }
 }

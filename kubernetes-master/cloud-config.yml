@@ -47,6 +47,7 @@ coreos:
         Requires=kubernetes-certs.service
         After=kubernetes-certs.service
         [Service]
+        Restart=always
         TimeoutStartSec=300
         ExecStartPre=/bin/docker pull quay.io/coreos/hyperkube:v1.2.0_coreos.0
         ExecStart=/bin/docker run --rm --name kube-apiserver --net host \
@@ -67,6 +68,7 @@ coreos:
         --kubelet-certificate-authority=/etc/kubernetes/ssl/ca.pem \
         --service-account-key-file=/etc/kubernetes/ssl/apiserver-key.pem \
         --service-cluster-ip-range=172.17.0.0/16
+        --apiserver-count=3
         ExecStop=/bin/docker stop -t 2 kube-apiserver
     - name: kube-proxy.service
       command: start
@@ -76,6 +78,7 @@ coreos:
         Requires=kube-apiserver.service
         After=kube-apiserver.service
         [Service]
+        Restart=always
         TimeoutStartSec=300
         ExecStartPre=/bin/docker pull quay.io/coreos/hyperkube:v1.2.0_coreos.0
         ExecStart=/bin/docker run --rm --name kube-proxy --privileged --net host \
@@ -94,6 +97,7 @@ coreos:
         Requires=kube-apiserver.service
         After=kube-apiserver.service
         [Service]
+        Restart=always
         TimeoutStartSec=300
         ExecStartPre=/usr/bin/curl -X POST -d '{"metadata":{"name":"kube-system"}}' -H 'Content-Type: application/json' http://127.0.0.1:8080/api/v1/namespaces
         ExecStartPre=/bin/docker pull quay.io/coreos/hyperkube:v1.2.0_coreos.0
@@ -115,6 +119,7 @@ coreos:
         Requires=kube-apiserver.service
         After=kube-apiserver.service
         [Service]
+        Restart=always
         TimeoutStartSec=300
         ExecStartPre=/bin/docker pull quay.io/coreos/hyperkube:v1.2.0_coreos.0
         ExecStart=/bin/docker run --rm --name kube-scheduler --net host \
@@ -132,6 +137,7 @@ coreos:
         Requires=docker.service
         After=docker.service
         [Service]
+        Restart=always
         ExecStart=/etc/kubernetes/ssl/create_certs.sh
         RemainAfterExit=yes
         Type=oneshot

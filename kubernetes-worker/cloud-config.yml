@@ -28,6 +28,7 @@ coreos:
         Requires=flanneld.service
         After=flanneld.service
         [Service]
+        Restart=always
         TimeoutStartSec=300
         ExecStartPre=/bin/docker pull quay.io/coreos/hyperkube:v1.2.0_coreos.0
         ExecStart=/bin/docker run --rm --name kube-proxy --privileged --net host \
@@ -51,7 +52,7 @@ coreos:
         After=flanneld.service
         [Service]
         ExecStartPre=/usr/bin/mkdir -p /etc/kubernetes/manifests
-
+        Restart=always
         Environment=KUBELET_VERSION=v1.2.0_coreos.0
         ExecStart=/usr/lib/coreos/kubelet-wrapper \
         --api-servers=https://master-internal.${domain} \

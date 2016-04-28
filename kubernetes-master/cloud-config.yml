@@ -16,12 +16,6 @@ coreos:
   units:
     - name: etcd2.service
       command: start
-      drop-ins:
-        - name: "40-phone-home.conf"
-          content: |
-            [Unit]
-            Requires=oem-phone-home.service
-            After=oem-phone-home.service
     - name: flanneld.service
       command: start
       drop-ins:
@@ -63,10 +57,10 @@ coreos:
         --advertise-address=$private_ipv4 \
         --admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota \
         --tls-cert-file=/etc/kubernetes/ssl/apiserver.pem \
-        --tls-private-key-file=/etc/kubernetes/ssl/apiserver-key.pem \
+        --tls-private-key-file=/etc/kubernetes/ssl/master-key.pem \
         --client-ca-file=/etc/kubernetes/ssl/ca.pem \
         --kubelet-certificate-authority=/etc/kubernetes/ssl/ca.pem \
-        --service-account-key-file=/etc/kubernetes/ssl/apiserver-key.pem \
+        --service-account-key-file=/etc/kubernetes/ssl/master-key.pem \
         --service-cluster-ip-range=172.17.0.0/16
         --apiserver-count=3
         ExecStop=/bin/docker stop -t 2 kube-apiserver
@@ -107,7 +101,7 @@ coreos:
         /hyperkube \
         controller-manager \
         --master=127.0.0.1:8080 \
-        --service-account-private-key-file=/etc/kubernetes/ssl/apiserver-key.pem \
+        --service-account-private-key-file=/etc/kubernetes/ssl/master-key.pem \
         --root-ca-file=/etc/kubernetes/ssl/ca.pem \
         --leader-elect=true
         ExecStop=/bin/docker stop -t 2 kube-controller-manager
@@ -137,7 +131,6 @@ coreos:
         Requires=docker.service
         After=docker.service
         [Service]
-        Restart=always
         ExecStart=/etc/kubernetes/ssl/create_certs.sh
         RemainAfterExit=yes
         Type=oneshot
@@ -182,56 +175,16 @@ write_files:
       ChallengeResponseAuthentication no
   - path: /etc/kubernetes/ssl/ca.pem
     permissions: 644
-    content: |
-      -----BEGIN CERTIFICATE-----
-      MIIDGjCCAgKgAwIBAgIJALxqgldpO58gMA0GCSqGSIb3DQEBBQUAMBIxEDAOBgNV
-      BAMTB2t1YmUtY2EwHhcNMTYwMzIyMTMyMTQ1WhcNNDMwODA4MTMyMTQ1WjASMRAw
-      DgYDVQQDEwdrdWJlLWNhMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
-      qbNYQq6vcKp2ugtfHI7+Z+lcqNyM++X6kCWAkrKvyJ9b+ZPYBj1NuWZiLl5FS3kl
-      AFPRjtwWaL+FJmRCvFIDRTruSjM1AraoQt+a8tA/zO+bRmWW++xfB9VMDqHob+AP
-      zNA747GU3F80uEDXtXZK/SdZHDKi4vj0oNnkVmC1UcmWHdng3LydDF2DTz4bZSzo
-      uDr1MCMRKFW+bUGF7aii3q27xwCs3of2bsaieU1lmsQE3RBUXnwlqjvbjoaxVOT7
-      2pnoos2EVViMQsCAtHIpdfV1DSm+QvrMc6dMogy1Ff5iSYNKjHKPVopkATpUQsOt
-      /Xql/GlOIkCyr8W0CI4CdwIDAQABo3MwcTAdBgNVHQ4EFgQUEzjp6GcXgIqgt5eE
-      iGO65GwqP4kwQgYDVR0jBDswOYAUEzjp6GcXgIqgt5eEiGO65GwqP4mhFqQUMBIx
-      EDAOBgNVBAMTB2t1YmUtY2GCCQC8aoJXaTufIDAMBgNVHRMEBTADAQH/MA0GCSqG
-      SIb3DQEBBQUAA4IBAQA5H9wA/YS3vKUEX93w+CpAbpLebFo7PCmX5TZ1x7K7GCN4
-      StUG+68XvvYwfSRp7x2iiTdvg9FJiJgFqUA0XR2tFJcT+D8KwFxgayVWnsY7bMQ6
-      QC1yGce3FuW0mhGqQQ4xrD0PobvUmOjb+TGTHHqROqkTde2MYSMhZbnwh67MQ1iA
-      nQ7sBqI9mrgrgXia+dQfRbc1rJaHm6fwsoR9cq+5uY4eq/0soqz1I8N1f4pKs0F4
-      ufj9vR6zgifG3JK3ldV/b1Rhw/ojbZ+lsHnTIxFD3IXVe4Ueji3aKQTVrVWX3FmW
-      2gxIiHJ5woOMjRBaVbUzIpjodmfK5wWRFOJpt62T
-      -----END CERTIFICATE-----
+    encoding: base64
+    content: ${ca}
   - path: /etc/kubernetes/ssl/ca-key.pem
     permissions: 644
-    content: |
-      -----BEGIN RSA PRIVATE KEY-----
-      MIIEpAIBAAKCAQEAqbNYQq6vcKp2ugtfHI7+Z+lcqNyM++X6kCWAkrKvyJ9b+ZPY
-      Bj1NuWZiLl5FS3klAFPRjtwWaL+FJmRCvFIDRTruSjM1AraoQt+a8tA/zO+bRmWW
-      ++xfB9VMDqHob+APzNA747GU3F80uEDXtXZK/SdZHDKi4vj0oNnkVmC1UcmWHdng
-      3LydDF2DTz4bZSzouDr1MCMRKFW+bUGF7aii3q27xwCs3of2bsaieU1lmsQE3RBU
-      XnwlqjvbjoaxVOT72pnoos2EVViMQsCAtHIpdfV1DSm+QvrMc6dMogy1Ff5iSYNK
-      jHKPVopkATpUQsOt/Xql/GlOIkCyr8W0CI4CdwIDAQABAoIBAQCBLTrvL4furGPK
-      BOP2mkbAFJxrEc/j49FSrqlrgcdbYSsjFU5omXuzuGLeRvZamDH5SNSI+bG5NKiH
-      a+R887T3mv9OziH5Gc+FcC7DzI/0USQSdzxyMiC4lr3ZmZeUqat9Tbl4/nGBOpun
-      8fwBbrVwdOZZF5Z0TevxEUvGEMGVKi+Shwp4W52wNs1B4RVRjm7PRX0AV1YKDZZ5
-      p+YwOstfONrCmi3fEyMxQ+Blmrdx9K5R1BllcI8TVq+gjIRZNpSsHjqvN6k5Ki4B
-      CfFLxBNgYX6OS1RwJYEYSAOJ1iVaDGX/uXSA02KAlaZ9t3zMjg+t2wi6FiITLLuC
-      t1kPWwqRAoGBANm7qKZDLKpY7Ok7VCu+/wYGiqHDkyRz5Ql14BlKV3PpKnfsJbZ8
-      jKtLXMpbaZD40qKJ9DmxfXpN3zVJoZ/gFeya0dZ4/CV+3lDCy1LAuDuROc0y7GOD
-      izHobjMeBHg0UvNQod3mLcQyMxOYaD0hs/nzVdJdPX4N9ejkCXIhM+tJAoGBAMeG
-      lms8LqMoK8EB+iVVJxBSFejaGCv1xcVLN/t9ntjZymt9MEcnHKRzo/dm0dQlkqdD
-      2fTuGtBEjCHguau5R7Q59nocoLxtw+FXeD5w/ebUf1BEeX44V4Ekvpa+Lg/V2lYG
-      4JJHLkjfEvC3+xWDMY9zpqXfedUxorb0mAjeFr+/AoGAB1GqkqQxbSx+Ejz/UFUk
-      R3SS1ms3mAMZUN8YgGEiXXAaEFvszJyVMfDflqHKA6iJlBMlFYdk22aguS7XcwNa
-      WVC++wGoIC6KlJZntUlrJ/1yvvYWQiYa2LuicK9yoQPJQgqU1lu1cCHr253E60El
-      xqIqYV7nAUTA3mpD8wUwtJkCgYEAupiJj9wGmZt139jjgYpzL/Y0e0GLnYEJ5gsE
-      XfQLXC3B+mhngAN56+oiC7tivI4u6rKv4TnUZbXVf9FUkt6BynDyqxyezdmxeMp+
-      r5aoPPm53u1K2doDK8mbXAqbtT+AIzfnSaW8CXZlli3ZaTL6ZHf5/+JRZCo5S/TP
-      QmvAxq0CgYB1s8gWxD3y253KgmDedK7hlM+0vONO4xlWBOXNPlkV3ZDg37S5QCwk
-      gabKCeqValezZ2A0l1U8TQn3L/xaBjA1XidBXX/DvgQSQ9oeRez+UkCM//Vj86EU
-      kes7zsew0e/FpXp4fsSpqgIHOkoTJLDJg2CcOXiL0SafFxnQBTntPQ==
-      -----END RSA PRIVATE KEY-----
+    encoding: base64
+    content: ${ca_key}
+  - path: /etc/kubernetes/ssl/master-key.pem
+    permissions: 644
+    encoding: base64
+    content: ${master_key}
   - path: /etc/kubernetes/ssl/openssl.cnf
     content: |
       [req]
@@ -258,8 +211,7 @@ write_files:
     content: |
       #!/bin/bash
       cd /etc/kubernetes/ssl
-      sudo openssl genrsa -out apiserver-key.pem 2048
-      sudo openssl req -new -key apiserver-key.pem -out apiserver.csr -subj "/CN=kube-apiserver" -config openssl.cnf
+      sudo openssl req -new -key master-key.pem -out apiserver.csr -subj "/CN=kube-apiserver" -config openssl.cnf
       sudo openssl x509 -req -in apiserver.csr -CA ca.pem -CAkey ca-key.pem -CAcreateserial -out apiserver.pem -days 365 -extensions v3_req -extfile openssl.cnf
       sudo rm apiserver.csr ca-key.pem
       sudo chmod 600 *-key.pem

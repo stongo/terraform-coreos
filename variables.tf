@@ -67,6 +67,18 @@ variable "ssh_fingerprint" {
   description = "fingerprint of (already saved) ssh key to add to instances"
 }
 
+variable "ca" {
+  description = "location of CA"
+}
+
+variable "ca_key" {
+  description = "location of CA key"
+}
+
+variable "master_key" {
+  description = "location of master key"
+}
+
 ## provider initialization goes here
 # provider "digitalocean" {
 #   token = "${var.do_token}"

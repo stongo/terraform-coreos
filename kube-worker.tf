@@ -5,6 +5,8 @@ resource "template_file" "worker" {
     domain = "${var.dnsimple_domain}"
     name = "${format("${var.worker_name}-%02d", count.index)}"
     reboot_strategy = "${var.reboot_strategy}"
+    ca = "${base64encode("${file("${var.ca}")}")}"
+    ca_key = "${base64encode("${file("${var.ca_key}")}")}"
   }
 }
 

@@ -39,10 +39,6 @@ variable "instance_facility" {
   description = "facility in which to create new instances"
 }
 
-# variable "do_token" {
-#   description = "api token for digitalocean"
-# }
-
 variable "packet_token" {
   description = "api token for packet"
 }
@@ -63,15 +59,7 @@ variable "dnsimple_domain" {
   description = "base domain to use for etcd discovery"
 }
 
-variable "ssh_fingerprint" {
-  description = "fingerprint of (already saved) ssh key to add to instances"
-}
-
 ## provider initialization goes here
-# provider "digitalocean" {
-#   token = "${var.do_token}"
-# }
-
 provider "packet" {
   auth_token = "${var.packet_token}"
 }

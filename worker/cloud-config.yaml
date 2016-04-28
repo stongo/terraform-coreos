@@ -1,0 +1,115 @@
+#cloud-config
+coreos:
+  update:
+    reboot-strategy: ${reboot_strategy}
+  locksmith:
+    window-start: Sun 05:00
+    window-length: 1h
+  etcd2:
+    discovery-srv: ${domain}
+    proxy: on
+  flannel:
+    interface: $private_ipv4
+    etcd_endpoints: http://127.0.0.1:2379
+  units:
+    - name: etcd2.service
+      command: start
+    - name: flanneld.service
+      command: start
+    - name: docker.service
+      drop-ins:
+      - name: "40-flannel.conf"
+        content: |
+          [Unit]
+          Requires=flanneld.service
+          After=flanneld.service
+    - name: kubelet.service
+      command: start
+      content: |
+        [Unit]
+        Description="Kubelet Service"
+        Requires=flanneld.service
+        Requires=kubernetes-certs.service
+        After=kubernetes-certs.service
+        After=flanneld.service
+        [Service]
+        ExecStartPre=/usr/bin/mkdir -p /etc/kubernetes/manifests
+        Environment=KUBELET_VERSION=v1.2.2_coreos.0
+        ExecStart=/usr/lib/coreos/kubelet-wrapper \
+        --api-servers=https://master-internal.${domain} \
+        --register-node=true \
+        --allow-privileged=true \
+        --config=/etc/kubernetes/manifests \
+        --hostname-override=${name} \
+        --cluster-dns=172.17.0.10 \
+        --cluster-domain=cluster.local \
+        --kubeconfig=/etc/kubernetes/worker-kubeconfig.yaml \
+        --node-ip=$private_ipv4
+        Restart=always
+        RestartSec=10
+        [Install]
+        WantedBy=multi-user.target
+    - name: kubernetes-certs.service
+      command: start
+      content: |
+        [Unit]
+        Description="creates required kubernetes worker certs"
+        [Service]
+        ExecStart=/etc/kubernetes/ssl/create_certs.sh
+        RemainAfterExit=yes
+        Type=oneshot
+    - name: sshd.socket
+      command: restart
+      content: |
+        [Socket]
+        ListenStream=2042
+        Accept=yes
+    - name: settimezone.service
+      command: start
+      content: |
+        [Unit]
+        Description=Set the timezone
+        [Service]
+        ExecStart=/usr/bin/timedatectl set-timezone UTC
+        RemainAfterExit=yes
+        Type=oneshot
+write_files:
+  - path: /etc/kubernetes/manifests/kube-proxy.yaml
+    encoding: base64
+    content: ${proxy}
+  - path: /etc/kubernetes/worker-kubeconfig.yaml
+    encoding: base64
+    content: ${kubeconfig}
+  - path: /etc/ntp.conf
+    encoding: base64
+    content: ${ntp}
+  - path: /etc/ssh/sshd_config
+    permissions: 0600
+    owner: root:root
+    encoding: base64
+    content: ${sshd}
+  - path: /etc/kubernetes/ssl/ca.pem
+    permissions: 644
+    encoding: base64
+    content: ${ca}
+  - path: /etc/kubernetes/ssl/ca-key.pem
+    permissions: 644
+    encoding: base64
+    content: ${ca_key}
+  - path: /etc/kubernetes/ssl/worker-openssl.cnf
+    content: |
+      [req]
+      req_extensions = v3_req
+      distinguished_name = req_distinguished_name
+      [req_distinguished_name]
+      [ v3_req ]
+      basicConstraints = CA:FALSE
+      keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+      subjectAltName = @alt_names
+      [alt_names]
+      IP.1 = $public_ipv4
+      IP.2 = $private_ipv4
+  - path: /etc/kubernetes/ssl/create_certs.sh
+    permissions: "755"
+    encoding: base64
+    content: ${create_certs}

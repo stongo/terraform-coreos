@@ -1,10 +1,29 @@
 resource "template_file" "master" {
   count = "${var.master_count}"
-  template = "${file("kubernetes-master/cloud-config.yml")}"
+  template = "${file("master/cloud-config.yaml")}"
   vars {
     domain = "${var.dnsimple_domain}"
     name = "${format("${var.master_name}-%02d", count.index)}"
     reboot_strategy = "${var.reboot_strategy}"
+    count = "${var.master_count}"
+
+    # manifests
+    # apiserver = "${template_file.apiserver.rendered}"
+    controller_manager = "${base64encode(file("master/kube-controller-manager.yaml"))}"
+    proxy = "${base64encode(file("master/kube-proxy.yaml"))}"
+    scheduler = "${base64encode(file("master/kube-scheduler.yaml"))}"
+
+    # certs
+    ca = "${base64encode(file("ssl/ca.pem"))}"
+    ca_key = "${base64encode(file("ssl/ca-key.pem"))}"
+    server_key = "${base64encode(file("master/apiserver-key.pem"))}"
+
+    # common
+    ntp = "${base64encode(file("common/ntp.conf"))}"
+    sshd = "${base64encode(file("common/sshd_config"))}"
+
+    # master specific
+    create_certs = "${base64encode(file("master/create_certs.sh"))}"
   }
 }
 

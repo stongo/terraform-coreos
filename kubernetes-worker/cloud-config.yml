@@ -61,7 +61,6 @@ coreos:
         --config=/etc/kubernetes/manifests \
         --hostname-override=${name} \
         --cluster-domain=cluster.local \
-        --cluster-dns=172.17.0.10 \
         --tls-cert-file=/etc/kubernetes/ssl/${name}.pem \
         --tls-private-key-file=/etc/kubernetes/ssl/${name}-key.pem \
         --kubeconfig=/etc/kubernetes/worker-kubeconfig.yaml \

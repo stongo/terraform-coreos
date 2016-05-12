@@ -35,6 +35,8 @@ coreos:
         [Service]
         ExecStartPre=/usr/bin/mkdir -p /etc/kubernetes/manifests
         Environment=KUBELET_VERSION=v1.2.2_coreos.0
+        Environment=KUBELET_ACI=docker://andyet/hyperkube
+        Environment=RKT_OPTS=--insecure-options=image
         ExecStart=/usr/lib/coreos/kubelet-wrapper \
         --api-servers=https://master-internal.${domain} \
         --register-node=true \
@@ -71,6 +73,16 @@ coreos:
         Description=Set the timezone
         [Service]
         ExecStart=/usr/bin/timedatectl set-timezone UTC
+        RemainAfterExit=yes
+        Type=oneshot
+    - name: kubedns-resolve.service
+      command: start
+      content: |
+        [Unit]
+        Description=Add k8s dns to /etc/resolv.conf
+        After=systemd-resolved
+        [Service]
+        ExecStart=/usr/bin/systemctl restart systemd-resolved
         RemainAfterExit=yes
         Type=oneshot
 write_files:
@@ -113,3 +125,8 @@ write_files:
     permissions: "755"
     encoding: base64
     content: ${create_certs}
+  - path: /etc/systemd/resolved.conf
+    content: |
+      [Resolve]
+      DNS=172.17.0.10 8.8.8.8
+      FallbackDNS=8.8.4.4

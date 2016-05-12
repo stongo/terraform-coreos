@@ -19,12 +19,6 @@ coreos:
   units:
     - name: etcd2.service
       command: start
-      drop-ins:
-        - name: "40-phone-home.conf"
-          content: |
-            [Unit]
-            Requires=oem-phone-home.service
-            After=oem-phone-home.service
     - name: flanneld.service
       command: start
       drop-ins:
@@ -149,6 +143,9 @@ write_files:
   - path: /etc/kubernetes/manifests/kube-scheduler.yaml
     encoding: base64
     content: ${scheduler}
+  - path: /etc/kubernetes/manifests/kube-system-namespace.yaml
+    encoding: base64
+    content: ${namespace}
   - path: /etc/ntp.conf
     encoding: base64
     content: ${ntp}

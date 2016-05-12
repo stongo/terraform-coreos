@@ -1,0 +1,2857 @@
+2016/05/10 21:35:35 [INFO] Terraform version: 0.6.14  
+2016/05/10 21:35:35 [DEBUG] Detected home directory from env var: /Users/stongo
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: atlas = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-atlas
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: aws = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-aws
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: azure = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-azure
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: azurerm = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-azurerm
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: chef = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-chef
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: clc = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-clc
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: cloudflare = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-cloudflare
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: cloudstack = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-cloudstack
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: consul = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-consul
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: datadog = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-datadog
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: digitalocean = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-digitalocean
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: dme = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-dme
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: dnsimple = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-dnsimple
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: docker = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-docker
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: dyn = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-dyn
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: github = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-github
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: google = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-google
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: heroku = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-heroku
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: influxdb = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-influxdb
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: mailgun = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-mailgun
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: mysql = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-mysql
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: null = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-null
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: openstack = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-openstack
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: packet = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-packet
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: postgresql = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-postgresql
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: powerdns = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-powerdns
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: rundeck = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-rundeck
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: statuscake = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-statuscake
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: template = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-template
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: terraform = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-terraform
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: tls = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-tls
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: triton = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-triton
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: ultradns = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-ultradns
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: vcd = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-vcd
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: vsphere = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-vsphere
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: chef = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provisioner-chef
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: file = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provisioner-file
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: local-exec = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provisioner-local-exec
+2016/05/10 21:35:35 [DEBUG] Discovered plugin: remote-exec = /usr/local/Cellar/terraform/0.6.14/bin/terraform-provisioner-remote-exec
+2016/05/10 21:35:35 [DEBUG] Detected home directory from env var: /Users/stongo
+2016/05/10 21:35:35 [DEBUG] Attempting to open CLI config file: /Users/stongo/.terraformrc
+2016/05/10 21:35:35 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2016/05/10 21:35:35 [DEBUG] Detected home directory from env var: /Users/stongo
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.ConfigTransformer:
+
+dnsimple_record.client_discovery
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+dnsimple_record.master_internal_rr
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master_rr
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.server_discovery
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.worker
+  packet_device.worker
+  var.dnsimple_domain
+  var.worker_count
+  var.worker_name
+dnsimple_record.worker_1
+  packet_device.worker-type1
+  var.dnsimple_domain
+  var.worker_name
+  var.worker_type1_count
+dnsimple_record.worker_rr
+  packet_device.worker
+  var.dnsimple_domain
+  var.worker_count
+dnsimple_record.worker_rr1
+  packet_device.worker-type1
+  var.dnsimple_domain
+packet_device.master
+  template_file.master
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.master_count
+  var.master_name
+  var.packet_project
+packet_device.worker
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker-type1
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.packet_project
+  var.worker_name
+  var.worker_type1_count
+provider.dnsimple
+  var.dnsimple_email
+  var.dnsimple_token
+provider.packet
+  var.packet_token
+template_file.master
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+  var.reboot_strategy
+template_file.worker
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig
+  var.worker_count
+  var.worker_name
+template_file.worker_proxy
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.OrphanTransformer:
+
+dnsimple_record.client_discovery
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+dnsimple_record.master_internal_rr
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master_rr
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.server_discovery
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.worker
+  packet_device.worker
+  var.dnsimple_domain
+  var.worker_count
+  var.worker_name
+dnsimple_record.worker_1
+  packet_device.worker-type1
+  var.dnsimple_domain
+  var.worker_name
+  var.worker_type1_count
+dnsimple_record.worker_rr
+  packet_device.worker
+  var.dnsimple_domain
+  var.worker_count
+dnsimple_record.worker_rr1
+  packet_device.worker-type1
+  var.dnsimple_domain
+packet_device.master
+  template_file.master
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.master_count
+  var.master_name
+  var.packet_project
+packet_device.worker
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker-type1
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.packet_project
+  var.worker_name
+  var.worker_type1_count
+provider.dnsimple
+  var.dnsimple_email
+  var.dnsimple_token
+provider.packet
+  var.packet_token
+template_file.master
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+  var.reboot_strategy
+template_file.worker
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig
+  var.worker_count
+  var.worker_name
+template_file.worker_proxy
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.AddOutputOrphanTransformer:
+
+dnsimple_record.client_discovery
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+dnsimple_record.master_internal_rr
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master_rr
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.server_discovery
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.worker
+  packet_device.worker
+  var.dnsimple_domain
+  var.worker_count
+  var.worker_name
+dnsimple_record.worker_1
+  packet_device.worker-type1
+  var.dnsimple_domain
+  var.worker_name
+  var.worker_type1_count
+dnsimple_record.worker_rr
+  packet_device.worker
+  var.dnsimple_domain
+  var.worker_count
+dnsimple_record.worker_rr1
+  packet_device.worker-type1
+  var.dnsimple_domain
+packet_device.master
+  template_file.master
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.master_count
+  var.master_name
+  var.packet_project
+packet_device.worker
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker-type1
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.packet_project
+  var.worker_name
+  var.worker_type1_count
+provider.dnsimple
+  var.dnsimple_email
+  var.dnsimple_token
+provider.packet
+  var.packet_token
+template_file.master
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+  var.reboot_strategy
+template_file.worker
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig
+  var.worker_count
+  var.worker_name
+template_file.worker_proxy
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+
+dnsimple_record.client_discovery
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+dnsimple_record.master_internal_rr
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master_rr
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.server_discovery
+  packet_device.master
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.worker
+  packet_device.worker
+  var.dnsimple_domain
+  var.worker_count
+  var.worker_name
+dnsimple_record.worker_1
+  packet_device.worker-type1
+  var.dnsimple_domain
+  var.worker_name
+  var.worker_type1_count
+dnsimple_record.worker_rr
+  packet_device.worker
+  var.dnsimple_domain
+  var.worker_count
+dnsimple_record.worker_rr1
+  packet_device.worker-type1
+  var.dnsimple_domain
+packet_device.master
+  template_file.master
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.master_count
+  var.master_name
+  var.packet_project
+packet_device.worker
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker-type1
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.packet_project
+  var.worker_name
+  var.worker_type1_count
+provider.dnsimple
+  var.dnsimple_email
+  var.dnsimple_token
+provider.packet
+  var.packet_token
+provider.template
+template_file.master
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+  var.reboot_strategy
+template_file.worker
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig
+  var.worker_count
+  var.worker_name
+template_file.worker_proxy
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.ProviderTransformer:
+
+dnsimple_record.client_discovery
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+dnsimple_record.master_internal_rr
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master_rr
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.server_discovery
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.worker
+  packet_device.worker
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_count
+  var.worker_name
+dnsimple_record.worker_1
+  packet_device.worker-type1
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_name
+  var.worker_type1_count
+dnsimple_record.worker_rr
+  packet_device.worker
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_count
+dnsimple_record.worker_rr1
+  packet_device.worker-type1
+  provider.dnsimple
+  var.dnsimple_domain
+packet_device.master
+  provider.packet
+  template_file.master
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.master_count
+  var.master_name
+  var.packet_project
+packet_device.worker
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker-type1
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.packet_project
+  var.worker_name
+  var.worker_type1_count
+provider.dnsimple
+  var.dnsimple_email
+  var.dnsimple_token
+provider.packet
+  var.packet_token
+provider.template
+template_file.master
+  provider.template
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+  var.reboot_strategy
+template_file.worker
+  provider.template
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.DisableProviderTransformer:
+
+dnsimple_record.client_discovery
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+dnsimple_record.master_internal_rr
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master_rr
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.server_discovery
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.worker
+  packet_device.worker
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_count
+  var.worker_name
+dnsimple_record.worker_1
+  packet_device.worker-type1
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_name
+  var.worker_type1_count
+dnsimple_record.worker_rr
+  packet_device.worker
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_count
+dnsimple_record.worker_rr1
+  packet_device.worker-type1
+  provider.dnsimple
+  var.dnsimple_domain
+packet_device.master
+  provider.packet
+  template_file.master
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.master_count
+  var.master_name
+  var.packet_project
+packet_device.worker
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker-type1
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.packet_project
+  var.worker_name
+  var.worker_type1_count
+provider.dnsimple
+  var.dnsimple_email
+  var.dnsimple_token
+provider.packet
+  var.packet_token
+provider.template
+template_file.master
+  provider.template
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+  var.reboot_strategy
+template_file.worker
+  provider.template
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.MissingProvisionerTransformer:
+
+dnsimple_record.client_discovery
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+dnsimple_record.master_internal_rr
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master_rr
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.server_discovery
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.worker
+  packet_device.worker
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_count
+  var.worker_name
+dnsimple_record.worker_1
+  packet_device.worker-type1
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_name
+  var.worker_type1_count
+dnsimple_record.worker_rr
+  packet_device.worker
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_count
+dnsimple_record.worker_rr1
+  packet_device.worker-type1
+  provider.dnsimple
+  var.dnsimple_domain
+packet_device.master
+  provider.packet
+  template_file.master
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.master_count
+  var.master_name
+  var.packet_project
+packet_device.worker
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker-type1
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.packet_project
+  var.worker_name
+  var.worker_type1_count
+provider.dnsimple
+  var.dnsimple_email
+  var.dnsimple_token
+provider.packet
+  var.packet_token
+provider.template
+template_file.master
+  provider.template
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+  var.reboot_strategy
+template_file.worker
+  provider.template
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.ProvisionerTransformer:
+
+dnsimple_record.client_discovery
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+dnsimple_record.master_internal_rr
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master_rr
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.server_discovery
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.worker
+  packet_device.worker
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_count
+  var.worker_name
+dnsimple_record.worker_1
+  packet_device.worker-type1
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_name
+  var.worker_type1_count
+dnsimple_record.worker_rr
+  packet_device.worker
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_count
+dnsimple_record.worker_rr1
+  packet_device.worker-type1
+  provider.dnsimple
+  var.dnsimple_domain
+packet_device.master
+  provider.packet
+  template_file.master
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.master_count
+  var.master_name
+  var.packet_project
+packet_device.worker
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker-type1
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.packet_project
+  var.worker_name
+  var.worker_type1_count
+provider.dnsimple
+  var.dnsimple_email
+  var.dnsimple_token
+provider.packet
+  var.packet_token
+provider.template
+template_file.master
+  provider.template
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+  var.reboot_strategy
+template_file.worker
+  provider.template
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.VertexTransformer:
+
+dnsimple_record.client_discovery
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+dnsimple_record.master_internal_rr
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master_rr
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.server_discovery
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.worker
+  packet_device.worker
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_count
+  var.worker_name
+dnsimple_record.worker_1
+  packet_device.worker-type1
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_name
+  var.worker_type1_count
+dnsimple_record.worker_rr
+  packet_device.worker
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_count
+dnsimple_record.worker_rr1
+  packet_device.worker-type1
+  provider.dnsimple
+  var.dnsimple_domain
+packet_device.master
+  provider.packet
+  template_file.master
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.master_count
+  var.master_name
+  var.packet_project
+packet_device.worker
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker-type1
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.packet_project
+  var.worker_name
+  var.worker_type1_count
+provider.dnsimple
+  var.dnsimple_email
+  var.dnsimple_token
+provider.packet
+  var.packet_token
+provider.template
+template_file.master
+  provider.template
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+  var.reboot_strategy
+template_file.worker
+  provider.template
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.FlattenTransformer:
+
+dnsimple_record.client_discovery
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+dnsimple_record.master_internal_rr
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master_rr
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.server_discovery
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.worker
+  packet_device.worker
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_count
+  var.worker_name
+dnsimple_record.worker_1
+  packet_device.worker-type1
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_name
+  var.worker_type1_count
+dnsimple_record.worker_rr
+  packet_device.worker
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_count
+dnsimple_record.worker_rr1
+  packet_device.worker-type1
+  provider.dnsimple
+  var.dnsimple_domain
+packet_device.master
+  provider.packet
+  template_file.master
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.master_count
+  var.master_name
+  var.packet_project
+packet_device.worker
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker-type1
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.packet_project
+  var.worker_name
+  var.worker_type1_count
+provider.dnsimple
+  var.dnsimple_email
+  var.dnsimple_token
+provider.packet
+  var.packet_token
+provider.template
+template_file.master
+  provider.template
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+  var.reboot_strategy
+template_file.worker
+  provider.template
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.ProxyTransformer:
+
+dnsimple_record.client_discovery
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+dnsimple_record.master_internal_rr
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.master_rr
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.server_discovery
+  packet_device.master
+  provider.dnsimple
+  var.dnsimple_domain
+  var.master_count
+dnsimple_record.worker
+  packet_device.worker
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_count
+  var.worker_name
+dnsimple_record.worker_1
+  packet_device.worker-type1
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_name
+  var.worker_type1_count
+dnsimple_record.worker_rr
+  packet_device.worker
+  provider.dnsimple
+  var.dnsimple_domain
+  var.worker_count
+dnsimple_record.worker_rr1
+  packet_device.worker-type1
+  provider.dnsimple
+  var.dnsimple_domain
+packet_device.master
+  provider.packet
+  template_file.master
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.master_count
+  var.master_name
+  var.packet_project
+packet_device.worker
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker-type1
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.packet_project
+  var.worker_name
+  var.worker_type1_count
+provider.dnsimple
+  var.dnsimple_email
+  var.dnsimple_token
+provider.packet
+  var.packet_token
+provider.template
+template_file.master
+  provider.template
+  var.dnsimple_domain
+  var.master_count
+  var.master_name
+  var.reboot_strategy
+template_file.worker
+  provider.template
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [DEBUG] Removing "template_file.master", filtered by targeting.
+2016/05/10 21:35:35 [DEBUG] Removing "packet_device.worker-type1", filtered by targeting.
+2016/05/10 21:35:35 [DEBUG] Removing "dnsimple_record.worker_1", filtered by targeting.
+2016/05/10 21:35:35 [DEBUG] Removing "dnsimple_record.worker_rr1", filtered by targeting.
+2016/05/10 21:35:35 [DEBUG] Removing "dnsimple_record.master_rr", filtered by targeting.
+2016/05/10 21:35:35 [DEBUG] Removing "dnsimple_record.master_internal_rr", filtered by targeting.
+2016/05/10 21:35:35 [DEBUG] Removing "dnsimple_record.client_discovery", filtered by targeting.
+2016/05/10 21:35:35 [DEBUG] Removing "dnsimple_record.server_discovery", filtered by targeting.
+2016/05/10 21:35:35 [DEBUG] Removing "dnsimple_record.worker", filtered by targeting.
+2016/05/10 21:35:35 [DEBUG] Removing "packet_device.master", filtered by targeting.
+2016/05/10 21:35:35 [DEBUG] Removing "dnsimple_record.master", filtered by targeting.
+2016/05/10 21:35:35 [DEBUG] Removing "dnsimple_record.worker_rr", filtered by targeting.
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+packet_device.worker
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+provider.dnsimple
+  var.dnsimple_email
+  var.dnsimple_token
+provider.packet
+  var.packet_token
+provider.template
+template_file.worker
+  provider.template
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.PruneProviderTransformer:
+
+packet_device.worker
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+provider.packet
+  var.packet_token
+provider.template
+template_file.worker
+  provider.template
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig
+  provider.template
+  var.worker_count
+  var.worker_name
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.DestroyTransformer:
+
+packet_device.worker
+  packet_device.worker (destroy tainted)
+  packet_device.worker (destroy)
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker (destroy tainted)
+  provider.packet
+  var.worker_count
+packet_device.worker (destroy)
+  provider.packet
+  var.worker_count
+provider.packet
+  var.packet_token
+provider.template
+template_file.worker
+  provider.template
+  template_file.worker (destroy tainted)
+  template_file.worker (destroy)
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker (destroy tainted)
+  packet_device.worker (destroy tainted)
+  provider.template
+  var.worker_count
+template_file.worker (destroy)
+  packet_device.worker (destroy)
+  provider.template
+  var.worker_count
+template_file.worker_create_certs
+  provider.template
+  template_file.worker_create_certs (destroy tainted)
+  template_file.worker_create_certs (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs (destroy tainted)
+  provider.template
+  template_file.worker (destroy tainted)
+  var.worker_count
+template_file.worker_create_certs (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_kubeconfig
+  provider.template
+  template_file.worker_kubeconfig (destroy tainted)
+  template_file.worker_kubeconfig (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig (destroy tainted)
+  provider.template
+  template_file.worker (destroy tainted)
+  var.worker_count
+template_file.worker_kubeconfig (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_proxy
+  provider.template
+  template_file.worker_proxy (destroy tainted)
+  template_file.worker_proxy (destroy)
+  var.dnsimple_domain
+template_file.worker_proxy (destroy tainted)
+  provider.template
+  template_file.worker (destroy tainted)
+template_file.worker_proxy (destroy)
+  provider.template
+  template_file.worker (destroy)
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.CreateBeforeDestroyTransformer:
+
+packet_device.worker
+  packet_device.worker (destroy tainted)
+  packet_device.worker (destroy)
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker (destroy tainted)
+  provider.packet
+  var.worker_count
+packet_device.worker (destroy)
+  provider.packet
+  var.worker_count
+provider.packet
+  var.packet_token
+provider.template
+template_file.worker
+  provider.template
+  template_file.worker (destroy tainted)
+  template_file.worker (destroy)
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker (destroy tainted)
+  packet_device.worker (destroy tainted)
+  provider.template
+  var.worker_count
+template_file.worker (destroy)
+  packet_device.worker (destroy)
+  provider.template
+  var.worker_count
+template_file.worker_create_certs
+  provider.template
+  template_file.worker_create_certs (destroy tainted)
+  template_file.worker_create_certs (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs (destroy tainted)
+  provider.template
+  template_file.worker (destroy tainted)
+  var.worker_count
+template_file.worker_create_certs (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_kubeconfig
+  provider.template
+  template_file.worker_kubeconfig (destroy tainted)
+  template_file.worker_kubeconfig (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig (destroy tainted)
+  provider.template
+  template_file.worker (destroy tainted)
+  var.worker_count
+template_file.worker_kubeconfig (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_proxy
+  provider.template
+  template_file.worker_proxy (destroy tainted)
+  template_file.worker_proxy (destroy)
+  var.dnsimple_domain
+template_file.worker_proxy (destroy tainted)
+  provider.template
+  template_file.worker (destroy tainted)
+template_file.worker_proxy (destroy)
+  provider.template
+  template_file.worker (destroy)
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.PruneDestroyTransformer:
+
+packet_device.worker
+  packet_device.worker (destroy)
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker (destroy)
+  provider.packet
+  var.worker_count
+provider.packet
+  var.packet_token
+provider.template
+template_file.worker
+  provider.template
+  template_file.worker (destroy)
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker (destroy)
+  packet_device.worker (destroy)
+  provider.template
+  var.worker_count
+template_file.worker_create_certs
+  provider.template
+  template_file.worker_create_certs (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_kubeconfig
+  provider.template
+  template_file.worker_kubeconfig (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.PruneNoopTransformer:
+
+packet_device.worker
+  packet_device.worker (destroy)
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker (destroy)
+  provider.packet
+  var.worker_count
+provider.packet
+  var.packet_token
+provider.template
+template_file.worker
+  provider.template
+  template_file.worker (destroy)
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker (destroy)
+  packet_device.worker (destroy)
+  provider.template
+  var.worker_count
+template_file.worker_create_certs
+  provider.template
+  template_file.worker_create_certs (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_kubeconfig
+  provider.template
+  template_file.worker_kubeconfig (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.CloseProviderTransformer:
+
+packet_device.worker
+  packet_device.worker (destroy)
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker (destroy)
+  provider.packet
+  var.worker_count
+provider.packet
+  var.packet_token
+provider.packet (close)
+  packet_device.worker
+  packet_device.worker (destroy)
+  provider.packet
+provider.template
+provider.template (close)
+  provider.template
+  template_file.worker
+  template_file.worker (destroy)
+  template_file.worker_create_certs
+  template_file.worker_create_certs (destroy)
+  template_file.worker_kubeconfig
+  template_file.worker_kubeconfig (destroy)
+  template_file.worker_proxy
+template_file.worker
+  provider.template
+  template_file.worker (destroy)
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker (destroy)
+  packet_device.worker (destroy)
+  provider.template
+  var.worker_count
+template_file.worker_create_certs
+  provider.template
+  template_file.worker_create_certs (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_kubeconfig
+  provider.template
+  template_file.worker_kubeconfig (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.CloseProvisionerTransformer:
+
+packet_device.worker
+  packet_device.worker (destroy)
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker (destroy)
+  provider.packet
+  var.worker_count
+provider.packet
+  var.packet_token
+provider.packet (close)
+  packet_device.worker
+  packet_device.worker (destroy)
+  provider.packet
+provider.template
+provider.template (close)
+  provider.template
+  template_file.worker
+  template_file.worker (destroy)
+  template_file.worker_create_certs
+  template_file.worker_create_certs (destroy)
+  template_file.worker_kubeconfig
+  template_file.worker_kubeconfig (destroy)
+  template_file.worker_proxy
+template_file.worker
+  provider.template
+  template_file.worker (destroy)
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker (destroy)
+  packet_device.worker (destroy)
+  provider.template
+  var.worker_count
+template_file.worker_create_certs
+  provider.template
+  template_file.worker_create_certs (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_kubeconfig
+  provider.template
+  template_file.worker_kubeconfig (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
+
+packet_device.worker
+  packet_device.worker (destroy)
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker (destroy)
+  provider.packet
+  var.worker_count
+provider.packet
+  var.packet_token
+provider.packet (close)
+  packet_device.worker
+  packet_device.worker (destroy)
+  provider.packet
+provider.template
+provider.template (close)
+  provider.template
+  template_file.worker
+  template_file.worker (destroy)
+  template_file.worker_create_certs
+  template_file.worker_create_certs (destroy)
+  template_file.worker_kubeconfig
+  template_file.worker_kubeconfig (destroy)
+  template_file.worker_proxy
+template_file.worker
+  provider.template
+  template_file.worker (destroy)
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker (destroy)
+  packet_device.worker (destroy)
+  provider.template
+  var.worker_count
+template_file.worker_create_certs
+  provider.template
+  template_file.worker_create_certs (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_kubeconfig
+  provider.template
+  template_file.worker_kubeconfig (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.RootTransformer:
+
+packet_device.worker
+  packet_device.worker (destroy)
+  provider.packet
+  template_file.worker
+  var.coreos_channel
+  var.dnsimple_domain
+  var.instance_facility
+  var.instance_type
+  var.packet_project
+  var.worker_count
+  var.worker_name
+packet_device.worker (destroy)
+  provider.packet
+  var.worker_count
+provider.packet
+  var.packet_token
+provider.packet (close)
+  packet_device.worker
+  packet_device.worker (destroy)
+  provider.packet
+provider.template
+provider.template (close)
+  provider.template
+  template_file.worker
+  template_file.worker (destroy)
+  template_file.worker_create_certs
+  template_file.worker_create_certs (destroy)
+  template_file.worker_kubeconfig
+  template_file.worker_kubeconfig (destroy)
+  template_file.worker_proxy
+root
+  provider.packet (close)
+  provider.template (close)
+  var.acme_nfs_path
+  var.dnsimple_email
+  var.dnsimple_token
+  var.master_count
+  var.master_name
+  var.worker_type1_count
+template_file.worker
+  provider.template
+  template_file.worker (destroy)
+  template_file.worker_create_certs
+  template_file.worker_kubeconfig
+  template_file.worker_proxy
+  var.dnsimple_domain
+  var.reboot_strategy
+  var.worker_count
+  var.worker_name
+template_file.worker (destroy)
+  packet_device.worker (destroy)
+  provider.template
+  var.worker_count
+template_file.worker_create_certs
+  provider.template
+  template_file.worker_create_certs (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_create_certs (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_kubeconfig
+  provider.template
+  template_file.worker_kubeconfig (destroy)
+  var.worker_count
+  var.worker_name
+template_file.worker_kubeconfig (destroy)
+  provider.template
+  template_file.worker (destroy)
+  var.worker_count
+template_file.worker_proxy
+  provider.template
+  var.dnsimple_domain
+var.acme_nfs_path
+var.coreos_channel
+var.dnsimple_domain
+var.dnsimple_email
+var.dnsimple_token
+var.instance_facility
+var.instance_type
+var.master_count
+var.master_name
+var.packet_project
+var.packet_token
+var.reboot_strategy
+var.worker_count
+var.worker_name
+var.worker_type1_count
+2016/05/10 21:35:35 [DEBUG] Starting graph walk: walkInput
+2016/05/10 21:35:35 [DEBUG] vertex root.var.master_name: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.var.master_name: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.master_name
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.master_name
+2016/05/10 21:35:35 [DEBUG] vertex root.var.worker_name: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.var.worker_name: evaluating
+2016/05/10 21:35:35 [DEBUG] vertex root.var.coreos_channel: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.var.packet_project: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.var.packet_token: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.var.worker_count: walking
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.worker_name
+2016/05/10 21:35:35 [DEBUG] vertex root.var.instance_type: walking
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] vertex root.var.packet_token: evaluating
+2016/05/10 21:35:35 [DEBUG] vertex root.var.worker_type1_count: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.provider.template: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.var.worker_type1_count: evaluating
+2016/05/10 21:35:35 [DEBUG] vertex root.var.reboot_strategy: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.var.dnsimple_email: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.var.reboot_strategy: evaluating
+2016/05/10 21:35:35 [DEBUG] vertex root.var.dnsimple_email: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.packet_token
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.dnsimple_email
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.dnsimple_email
+2016/05/10 21:35:35 [DEBUG] vertex root.var.acme_nfs_path: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.var.acme_nfs_path: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.acme_nfs_path
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.acme_nfs_path
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.worker_name
+2016/05/10 21:35:35 [DEBUG] vertex root.var.instance_facility: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.var.instance_facility: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.instance_facility
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.instance_facility
+2016/05/10 21:35:35 [DEBUG] vertex root.var.master_count: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.var.master_count: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.master_count
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.master_count
+2016/05/10 21:35:35 [DEBUG] vertex root.provider.template: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: provider.template
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInitProvider
+2016/05/10 21:35:35 [DEBUG] Starting plugin: /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-template []string{"/usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-template"}
+2016/05/10 21:35:35 [DEBUG] vertex root.var.packet_project: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.packet_project
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.packet_project
+2016/05/10 21:35:35 [DEBUG] vertex root.var.coreos_channel: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.coreos_channel
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.coreos_channel
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.worker_type1_count
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] vertex root.var.worker_count: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.worker_count
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.worker_count
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_create_certs, got dep: var.worker_count
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_kubeconfig, got dep: var.worker_count
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.reboot_strategy
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker, got dep: var.worker_count
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_kubeconfig (destroy), got dep: var.worker_count
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_create_certs, got dep: var.worker_name
+2016/05/10 21:35:35 [DEBUG] vertex root.var.dnsimple_domain: walking
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_kubeconfig, got dep: var.worker_name
+2016/05/10 21:35:35 [DEBUG] vertex root.var.dnsimple_domain: evaluating
+2016/05/10 21:35:35 [DEBUG] vertex root.var.instance_type: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.dnsimple_domain
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.dnsimple_domain
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.instance_type
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_proxy, got dep: var.dnsimple_domain
+2016/05/10 21:35:35 [DEBUG] vertex root.var.dnsimple_token: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.var.dnsimple_token: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: var.dnsimple_token
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.dnsimple_token
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.reboot_strategy
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.packet_token
+2016/05/10 21:35:35 [DEBUG] vertex provider.packet, got dep: var.packet_token
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] vertex root.provider.packet: walking
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.instance_type
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: var.worker_type1_count
+2016/05/10 21:35:35 [DEBUG] vertex root.provider.packet: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: provider.packet
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInitProvider
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: var.worker_type1_count
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: var.master_count
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: var.dnsimple_email
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: var.master_name
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: var.dnsimple_token
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: var.acme_nfs_path
+2016/05/10 21:35:35 [DEBUG] Waiting for RPC address for: /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-template
+2016/05/10 21:35:35 [DEBUG] terraform-provider-template: 2016/05/10 21:35:35 Plugin address: unix /var/folders/dc/97qhxrk10w584qh6zw4c12_m0000gn/T/tf-plugin516828081
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalOpFilter
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalGetProvider
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInterpolate
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalBuildProviderConfig
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInputProvider
+2016/05/10 21:35:35 [DEBUG] Starting plugin: /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-packet []string{"/usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-packet"}
+2016/05/10 21:35:35 [DEBUG] Waiting for RPC address for: /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-packet
+2016/05/10 21:35:35 [DEBUG] terraform-provider-packet: 2016/05/10 21:35:35 Plugin address: unix /var/folders/dc/97qhxrk10w584qh6zw4c12_m0000gn/T/tf-plugin132944097
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalOpFilter
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalGetProvider
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInterpolate
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalBuildProviderConfig
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInputProvider
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: provider.template
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_proxy, got dep: provider.template
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_kubeconfig (destroy), got dep: provider.template
+2016/05/10 21:35:35 [DEBUG] vertex provider.template (close), got dep: provider.template
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_proxy: walking
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_create_certs (destroy), got dep: provider.template
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_proxy: evaluating
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_create_certs, got dep: provider.template
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_kubeconfig, got dep: provider.template
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_proxy
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInterpolate
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_proxy
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_proxy: expanding/walking dynamic subgraph
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+template_file.worker_proxy
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+template_file.worker_proxy
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.RootTransformer:
+
+template_file.worker_proxy
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_proxy: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_proxy: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_proxy
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInstanceInfo
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_proxy
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker, got dep: template_file.worker_proxy
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker, got dep: var.reboot_strategy
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: provider.packet
+2016/05/10 21:35:35 [DEBUG] vertex packet_device.worker (destroy), got dep: provider.packet
+2016/05/10 21:35:35 [DEBUG] vertex packet_device.worker (destroy), got dep: var.worker_count
+2016/05/10 21:35:35 [DEBUG] vertex provider.packet (close), got dep: provider.packet
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker (destroy): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: packet_device.worker (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInterpolate
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: packet_device.worker (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker (destroy): expanding/walking dynamic subgraph
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+packet_device.worker #0 (destroy)
+packet_device.worker #1 (destroy)
+packet_device.worker #2 (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.OrphanTransformer:
+
+packet_device.worker #0 (destroy)
+packet_device.worker #1 (destroy)
+packet_device.worker #2 (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.DeposedTransformer:
+
+packet_device.worker #0 (destroy)
+packet_device.worker #1 (destroy)
+packet_device.worker #2 (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+packet_device.worker #0 (destroy)
+packet_device.worker #1 (destroy)
+packet_device.worker #2 (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.RootTransformer:
+
+packet_device.worker #0 (destroy)
+packet_device.worker #1 (destroy)
+packet_device.worker #2 (destroy)
+root
+  packet_device.worker #0 (destroy)
+  packet_device.worker #1 (destroy)
+  packet_device.worker #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker #2 (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker #2 (destroy): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: packet_device.worker #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: packet_device.worker #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker #1 (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker #1 (destroy): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: packet_device.worker #1 (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: packet_device.worker #1 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: packet_device.worker #1 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: packet_device.worker #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker #0 (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker #0 (destroy): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: packet_device.worker #0 (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: packet_device.worker #0 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: packet_device.worker #0 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.root: walking
+2016/05/10 21:35:35 [DEBUG] vertex provider.packet (close), got dep: packet_device.worker (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker (destroy), got dep: packet_device.worker (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker (destroy), got dep: provider.template
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker (destroy), got dep: var.worker_count
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker (destroy): evaluating
+2016/05/10 21:35:35 [DEBUG] vertex packet_device.worker, got dep: packet_device.worker (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex packet_device.worker, got dep: var.coreos_channel
+2016/05/10 21:35:35 [DEBUG] vertex packet_device.worker, got dep: var.instance_facility
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex packet_device.worker, got dep: var.instance_type
+2016/05/10 21:35:35 [DEBUG] vertex packet_device.worker, got dep: var.worker_name
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInterpolate
+2016/05/10 21:35:35 [DEBUG] vertex packet_device.worker, got dep: provider.packet
+2016/05/10 21:35:35 [DEBUG] vertex packet_device.worker, got dep: var.worker_count
+2016/05/10 21:35:35 [DEBUG] vertex packet_device.worker, got dep: var.dnsimple_domain
+2016/05/10 21:35:35 [DEBUG] vertex packet_device.worker, got dep: var.packet_project
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker (destroy): expanding/walking dynamic subgraph
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+template_file.worker #0 (destroy)
+template_file.worker #1 (destroy)
+template_file.worker #2 (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.OrphanTransformer:
+
+template_file.worker #0 (destroy)
+template_file.worker #1 (destroy)
+template_file.worker #2 (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.DeposedTransformer:
+
+template_file.worker #0 (destroy)
+template_file.worker #1 (destroy)
+template_file.worker #2 (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+template_file.worker #0 (destroy)
+template_file.worker #1 (destroy)
+template_file.worker #2 (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.RootTransformer:
+
+root
+  template_file.worker #0 (destroy)
+  template_file.worker #1 (destroy)
+  template_file.worker #2 (destroy)
+template_file.worker #0 (destroy)
+template_file.worker #1 (destroy)
+template_file.worker #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker #0 (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker #0 (destroy): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker #0 (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker #0 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker #0 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker #2 (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker #1 (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker #2 (destroy): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker #1 (destroy): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker #1 (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker #1 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker #1 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.root: walking
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_kubeconfig (destroy), got dep: template_file.worker (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig (destroy): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_kubeconfig (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInterpolate
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_create_certs (destroy), got dep: template_file.worker (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_create_certs (destroy), got dep: var.worker_count
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs (destroy): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_create_certs (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInterpolate
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_kubeconfig (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig (destroy): expanding/walking dynamic subgraph
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+template_file.worker_kubeconfig #0 (destroy)
+template_file.worker_kubeconfig #1 (destroy)
+template_file.worker_kubeconfig #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.OrphanTransformer:
+
+template_file.worker_kubeconfig #0 (destroy)
+template_file.worker_kubeconfig #1 (destroy)
+template_file.worker_kubeconfig #2 (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.DeposedTransformer:
+
+template_file.worker_kubeconfig #0 (destroy)
+template_file.worker_kubeconfig #1 (destroy)
+template_file.worker_kubeconfig #2 (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+template_file.worker_kubeconfig #0 (destroy)
+template_file.worker_kubeconfig #1 (destroy)
+template_file.worker_kubeconfig #2 (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.RootTransformer:
+
+root
+  template_file.worker_kubeconfig #0 (destroy)
+  template_file.worker_kubeconfig #1 (destroy)
+  template_file.worker_kubeconfig #2 (destroy)
+template_file.worker_kubeconfig #0 (destroy)
+template_file.worker_kubeconfig #1 (destroy)
+template_file.worker_kubeconfig #2 (destroy)
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_create_certs (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig #2 (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig #2 (destroy): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_kubeconfig #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig #0 (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig #1 (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig #0 (destroy): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_kubeconfig #2 (destroy)
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_kubeconfig #0 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig #1 (destroy): evaluating
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_kubeconfig #1 (destroy)
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_kubeconfig #0 (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs (destroy): expanding/walking dynamic subgraph
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_kubeconfig #1 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker_kubeconfig #1 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker_kubeconfig #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker_kubeconfig #0 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.root: walking
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_kubeconfig, got dep: template_file.worker_kubeconfig (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+template_file.worker_create_certs #0 (destroy)
+template_file.worker_create_certs #1 (destroy)
+template_file.worker_create_certs #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_kubeconfig
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInterpolate
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.OrphanTransformer:
+
+template_file.worker_create_certs #0 (destroy)
+template_file.worker_create_certs #1 (destroy)
+template_file.worker_create_certs #2 (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.DeposedTransformer:
+
+template_file.worker_create_certs #0 (destroy)
+template_file.worker_create_certs #1 (destroy)
+template_file.worker_create_certs #2 (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+template_file.worker_create_certs #0 (destroy)
+template_file.worker_create_certs #1 (destroy)
+template_file.worker_create_certs #2 (destroy)
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.RootTransformer:
+
+root
+  template_file.worker_create_certs #0 (destroy)
+  template_file.worker_create_certs #1 (destroy)
+  template_file.worker_create_certs #2 (destroy)
+template_file.worker_create_certs #0 (destroy)
+template_file.worker_create_certs #1 (destroy)
+template_file.worker_create_certs #2 (destroy)
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_kubeconfig
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig: expanding/walking dynamic subgraph
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+template_file.worker_kubeconfig #0
+template_file.worker_kubeconfig #1
+template_file.worker_kubeconfig #2
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+template_file.worker_kubeconfig #0
+template_file.worker_kubeconfig #1
+template_file.worker_kubeconfig #2
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.RootTransformer:
+
+root
+  template_file.worker_kubeconfig #0
+  template_file.worker_kubeconfig #1
+  template_file.worker_kubeconfig #2
+template_file.worker_kubeconfig #0
+template_file.worker_kubeconfig #1
+template_file.worker_kubeconfig #2
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig #1: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs #1 (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs #1 (destroy): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_create_certs #1 (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_create_certs #1 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs #0 (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs #0 (destroy): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_create_certs #0 (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_create_certs #0 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker_create_certs #0 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker_create_certs #1 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs #2 (destroy): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs #2 (destroy): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_create_certs #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_create_certs #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker_create_certs #2 (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.root: walking
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker_create_certs, got dep: template_file.worker_create_certs (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex provider.template (close), got dep: template_file.worker_create_certs (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig #2: walking
+2016/05/10 21:35:35 [DEBUG] vertex provider.template (close), got dep: template_file.worker_kubeconfig (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex provider.template (close), got dep: template_file.worker_proxy
+2016/05/10 21:35:35 [DEBUG] vertex provider.template (close), got dep: template_file.worker (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig #0: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig #1: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_kubeconfig #1
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInstanceInfo
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_kubeconfig #1
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_create_certs
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInterpolate
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig #0: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_kubeconfig #0
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInstanceInfo
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_kubeconfig #0
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker_kubeconfig #0
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker_kubeconfig #1
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_create_certs
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs: expanding/walking dynamic subgraph
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+template_file.worker_create_certs #0
+template_file.worker_create_certs #1
+template_file.worker_create_certs #2
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+template_file.worker_create_certs #0
+template_file.worker_create_certs #1
+template_file.worker_create_certs #2
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.RootTransformer:
+
+root
+  template_file.worker_create_certs #0
+  template_file.worker_create_certs #1
+  template_file.worker_create_certs #2
+template_file.worker_create_certs #0
+template_file.worker_create_certs #1
+template_file.worker_create_certs #2
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs #1: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_kubeconfig #2: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_kubeconfig #2
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInstanceInfo
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_kubeconfig #2
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker_kubeconfig #2
+2016/05/10 21:35:35 [DEBUG] vertex root.root: walking
+2016/05/10 21:35:35 [DEBUG] vertex provider.template (close), got dep: template_file.worker_kubeconfig
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs #0: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs #2: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs #1: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_create_certs #1
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInstanceInfo
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_create_certs #1
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs #0: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_create_certs #0
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInstanceInfo
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_create_certs #0
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker_create_certs #2: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker_create_certs #2
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInstanceInfo
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker_create_certs #2
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker_create_certs #2
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker_create_certs #0
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker_create_certs #1
+2016/05/10 21:35:35 [DEBUG] vertex root.root: walking
+2016/05/10 21:35:35 [DEBUG] vertex provider.template (close), got dep: template_file.worker_create_certs
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker, got dep: template_file.worker_create_certs
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker, got dep: template_file.worker (destroy)
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker, got dep: template_file.worker_kubeconfig
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker, got dep: var.dnsimple_domain
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker, got dep: var.worker_name
+2016/05/10 21:35:35 [DEBUG] vertex template_file.worker, got dep: provider.template
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInterpolate
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker: expanding/walking dynamic subgraph
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+template_file.worker #0
+template_file.worker #1
+template_file.worker #2
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+template_file.worker #0
+template_file.worker #1
+template_file.worker #2
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.RootTransformer:
+
+root
+  template_file.worker #0
+  template_file.worker #1
+  template_file.worker #2
+template_file.worker #0
+template_file.worker #1
+template_file.worker #2
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker #0: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker #2: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker #1: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker #0: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker #0
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInstanceInfo
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker #0
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker #0
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker #2: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker #2
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInstanceInfo
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker #2
+2016/05/10 21:35:35 [DEBUG] vertex root.template_file.worker #1: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: template_file.worker #1
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInstanceInfo
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: template_file.worker #1
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker #1
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: template_file.worker #2
+2016/05/10 21:35:35 [DEBUG] vertex root.root: walking
+2016/05/10 21:35:35 [DEBUG] vertex provider.template (close), got dep: template_file.worker
+2016/05/10 21:35:35 [DEBUG] vertex packet_device.worker, got dep: template_file.worker
+2016/05/10 21:35:35 [DEBUG] vertex root.provider.template (close): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.provider.template (close): evaluating
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: provider.template (close)
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalCloseProvider
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: packet_device.worker
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInterpolate
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: provider.template (close)
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: packet_device.worker
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker: expanding/walking dynamic subgraph
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+packet_device.worker #0
+packet_device.worker #1
+packet_device.worker #2
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+packet_device.worker #0
+packet_device.worker #1
+packet_device.worker #2
+2016/05/10 21:35:35 [TRACE] Graph after step *terraform.RootTransformer:
+
+packet_device.worker #0
+packet_device.worker #1
+packet_device.worker #2
+root
+  packet_device.worker #0
+  packet_device.worker #1
+  packet_device.worker #2
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker #0: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker #1: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker #2: walking
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker #0: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: packet_device.worker #0
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInstanceInfo
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: packet_device.worker #0
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: packet_device.worker #0
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker #1: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: packet_device.worker #1
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInstanceInfo
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: packet_device.worker #1
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: packet_device.worker #1
+2016/05/10 21:35:35 [DEBUG] vertex root.packet_device.worker #2: evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: packet_device.worker #2
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalSequence
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalInstanceInfo
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [DEBUG] root: eval: terraform.EvalNoop
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: packet_device.worker #2
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: packet_device.worker #2
+2016/05/10 21:35:35 [DEBUG] vertex root.root: walking
+2016/05/10 21:35:35 [DEBUG] vertex provider.packet (close), got dep: packet_device.worker
+2016/05/10 21:35:35 [DEBUG] vertex root.provider.packet (close): walking
+2016/05/10 21:35:35 [DEBUG] vertex root.provider.packet (close): evaluating
+2016/05/10 21:35:35 [TRACE] [walkInput] Entering eval tree: provider.packet (close)
+2016/05/10 21:35:35 [DEBUG] root: eval: *terraform.EvalCloseProvider
+2016/05/10 21:35:35 [TRACE] [walkInput] Exiting eval tree: provider.packet (close)
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: provider.packet (close)
+2016/05/10 21:35:35 [DEBUG] vertex root, got dep: provider.template (close)
+2016/05/10 21:35:35 [DEBUG] vertex root.root: walking
+2016/05/10 21:35:35 [DEBUG] waiting for all plugin processes to complete...
+2016/05/10 21:35:35 [DEBUG] /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-packet: plugin process exited
+2016/05/10 21:35:35 [DEBUG] /usr/local/Cellar/terraform/0.6.14/bin/terraform-provider-template: plugin process exited
+panic: Unknown type in count var: dnsimple_record.worker_rr1
+
+goroutine 1 [running]:
+panic(0x82b680, 0x821568340)
+	/usr/local/Cellar/go/1.6/libexec/src/runtime/panic.go:464 +0x3e6
+github.com/hashicorp/terraform/config.(*Config).Validate(0x82149e0b0, 0x0, 0x0)
+	/private/tmp/terraform20160322-9327-1nlshb8/terraform-0.6.14/src/github.com/hashicorp/terraform/config/config.go:434 +0x580a
+github.com/hashicorp/terraform/config/module.(*Tree).Validate(0x8218086e0, 0x0, 0x0)
+	/private/tmp/terraform20160322-9327-1nlshb8/terraform-0.6.14/src/github.com/hashicorp/terraform/config/module/tree.go:247 +0x1d5
+github.com/hashicorp/terraform/terraform.(*Context).Validate(0x8213881a0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/private/tmp/terraform20160322-9327-1nlshb8/terraform-0.6.14/src/github.com/hashicorp/terraform/terraform/context.go:432 +0xc8
+github.com/hashicorp/terraform/command.validateContext(0x8213881a0, 0x88213b2280, 0x82147d760, 0x0)
+	/private/tmp/terraform20160322-9327-1nlshb8/terraform-0.6.14/src/github.com/hashicorp/terraform/command/command.go:34 +0x3e
+github.com/hashicorp/terraform/command.(*PlanCommand).Run(0x8214cc0f0, 0x8214e61d0, 0x0, 0x0, 0x0)
+	/private/tmp/terraform20160322-9327-1nlshb8/terraform-0.6.14/src/github.com/hashicorp/terraform/command/plan.go:77 +0xaa5
+github.com/hashicorp/terraform/vendor/github.com/mitchellh/cli.(*CLI).Run(0x8213f6540, 0x82144dda0, 0x0, 0x0)
+	/private/tmp/terraform20160322-9327-1nlshb8/terraform-0.6.14/src/github.com/hashicorp/terraform/vendor/github.com/mitchellh/cli/cli.go:153 +0x5ee
+main.wrappedMain(0x0)
+	/private/tmp/terraform20160322-9327-1nlshb8/terraform-0.6.14/src/github.com/hashicorp/terraform/main.go:142 +0xb05
+main.realMain(0x0)
+	/private/tmp/terraform20160322-9327-1nlshb8/terraform-0.6.14/src/github.com/hashicorp/terraform/main.go:78 +0xa10
+main.main()
+	/private/tmp/terraform20160322-9327-1nlshb8/terraform-0.6.14/src/github.com/hashicorp/terraform/main.go:21 +0x18

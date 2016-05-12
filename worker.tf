@@ -6,11 +6,27 @@ resource "template_file" "worker_create_certs" {
   }
 }
 
+resource "template_file" "worker_t1_create_certs" {
+  count = "${var.worker_count}"
+  template = "${file("worker/create_certs.sh")}"
+  vars {
+    name = "${format("${var.worker_name}-t1-%02d", count.index)}"
+  }
+}
+
 resource "template_file" "worker_kubeconfig" {
   count = "${var.worker_count}"
   template = "${file("worker/kubeconfig.yaml")}"
   vars {
     name = "${format("${var.worker_name}-%02d", count.index)}"
+  }
+}
+
+resource "template_file" "worker_t1_kubeconfig" {
+  count = "${var.worker_type1_count}"
+  template = "${file("worker/kubeconfig.yaml")}"
+  vars {
+    name = "${format("${var.worker_name}-t1-%02d", count.index)}"
   }
 }
 
@@ -46,6 +62,31 @@ resource "template_file" "worker" {
   }
 }
 
+resource "template_file" "worker_type1" {
+  count = "${var.worker_type1_count}"
+  template = "${file("worker/cloud-config.yaml")}"
+  vars {
+    domain = "${var.dnsimple_domain}"
+    name = "${format("${var.worker_name}-t1-%02d", count.index)}"
+    reboot_strategy = "off"
+
+    # manifests
+    proxy = "${base64encode(template_file.worker_proxy.rendered)}"
+
+    # certs
+    ca = "${base64encode(file("ssl/ca.pem"))}"
+    ca_key = "${base64encode(file("ssl/ca-key.pem"))}"
+
+    # common
+    ntp = "${base64encode(file("common/ntp.conf"))}"
+    sshd = "${base64encode(file("common/sshd_config"))}"
+
+    # worker specific
+    create_certs = "${base64encode(element(template_file.worker_t1_create_certs.*.rendered, count.index))}"
+    kubeconfig = "${base64encode(element(template_file.worker_t1_kubeconfig.*.rendered, count.index))}"
+  }
+}
+
 resource "packet_device" "worker" {
   count = "${var.worker_count}"
   hostname = "${format("${var.worker_name}-%02d", count.index)}.${var.dnsimple_domain}"
@@ -57,6 +98,17 @@ resource "packet_device" "worker" {
   user_data = "${element(template_file.worker.*.rendered, count.index)}"
 }
 
+resource "packet_device" "worker-type1" {
+  count = "${var.worker_type1_count}"
+  hostname = "${format("${var.worker_name}-t1-%02d", count.index)}.${var.dnsimple_domain}"
+  project_id = "${var.packet_project}"
+  operating_system = "coreos_${var.coreos_channel}"
+  facility = "${var.instance_facility}"
+  plan = "baremetal_1"
+  billing_cycle = "hourly"
+  user_data = "${element(template_file.worker_type1.*.rendered, count.index)}"
+}
+
 resource "dnsimple_record" "worker" {
   count = "${var.worker_count}"
   domain = "${var.dnsimple_domain}"
@@ -66,11 +118,29 @@ resource "dnsimple_record" "worker" {
   ttl = 60
 }
 
+resource "dnsimple_record" "worker_1" {
+  count = "${var.worker_type1_count}"
+  domain = "${var.dnsimple_domain}"
+  name = "${format("${var.worker_name}-%02d-t1", count.index)}"
+  value = "${element(packet_device.worker-type1.*.network.0.address, count.index)}"
+  type = "A"
+  ttl = 60
+}
+
 resource "dnsimple_record" "worker_rr" {
   count = "${var.worker_count}"
   domain = "${var.dnsimple_domain}"
   name = "worker"
   value = "${element(packet_device.worker.*.network.0.address, count.index)}"
+  type = "A"
+  ttl = 60
+}
+
+resource "dnsimple_record" "worker_rr1" {
+  count = "${var.worker_type1_count}"
+  domain = "${var.dnsimple_domain}"
+  name = "worker-t1"
+  value = "${element(packet_device.worker-type1.*.network.0.address, count.index)}"
   type = "A"
   ttl = 60
 }

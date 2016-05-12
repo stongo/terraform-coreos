@@ -15,7 +15,7 @@ variable "worker_name" {
 }
 
 variable "worker_count" {
-  default = "3"
+  default = "5"
   description = "number of instances to add to the kubernetes cluster as workers"
 }
 
@@ -57,6 +57,15 @@ variable "dnsimple_email" {
 
 variable "dnsimple_domain" {
   description = "base domain to use for etcd discovery"
+}
+
+variable "acme_nfs_path" {
+  description = "NFS path to mount to kubelet for ACME certificate storage"
+}
+
+variable "worker_type1_count" {
+  description = "Count of BareMetal Type 1 servers"
+  default = 2
 }
 
 ## provider initialization goes here

@@ -12,6 +12,7 @@ resource "template_file" "master" {
     controller_manager = "${base64encode(file("master/kube-controller-manager.yaml"))}"
     proxy = "${base64encode(file("master/kube-proxy.yaml"))}"
     scheduler = "${base64encode(file("master/kube-scheduler.yaml"))}"
+    namespace = "${base64encode(file("master/kube-system-namespace.yaml"))}"
 
     # certs
     ca = "${base64encode(file("ssl/ca.pem"))}"

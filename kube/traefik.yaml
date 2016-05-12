@@ -1,49 +1,70 @@
 apiVersion: v1
-kind: Service
+kind: ConfigMap
+metadata:
+  name: traefik-config
+data:
+  traefik.toml: |
+    logLevel = "DEBUG"
+    defaultEntryPoints = ["https", "http"]
+    [entryPoints]
+      [entryPoints.http]
+      address = ":80"
+        [entryPoints.http.redirect]
+          entryPoint = "https"
+      [entryPoints.https]
+      address = ":443"
+        [entryPoints.https.tls]
+    [web]
+    address = ":8080"
+    [acme]
+    email = "ops@andyet.net"
+    storageFile = "/etc/acme/acme.json"
+    entryPoint = "https"
+    onDemand = true
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
   name: traefik
   labels:
-    k8s-app: traefik-ingress-lb
+    k8s-app: traefik
+    kubernetes.io/cluster-service: "true"
 spec:
-  selector:
-    k8s-app: traefik-ingress-lb
-  externalIPs: ["147.75.197.55", "147.75.197.109", "147.75.197.69"]
-  ports:
-    - name: http
-      port: 80
-    - name: https
-      port: 443
----
-apiVersion: v1
-kind: ReplicationController
-metadata:
-  name: traefik-ingress-controller
-  labels:
-    k8s-app: traefik-ingress-lb
-spec:
-  replicas: 1
-  selector:
-    k8s-app: traefik-ingress-lb
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 0
   template:
     metadata:
       labels:
-        k8s-app: traefik-ingress-lb
-        name: traefik-ingress-lb
+        k8s-app: traefik
+        kubernetes.io/cluster-service: "true"
     spec:
       terminationGracePeriodSeconds: 60
       restartPolicy: Always
       dnsPolicy: ClusterFirst
+      nodeSelector:
+        traefik: "true"
       containers:
       - image: containous/traefik
-        name: traefik-ingress-lb
+        name: traefik
         imagePullPolicy: Always
+        args:
+        - --kubernetes
+        - --kubernetes.endpoint=https://master-internal.talky.io
         ports:
         - containerPort: 80
           name: http
+          hostPort: 80
         - containerPort: 443
           name: https
+          hostPort: 443
         - containerPort: 8080
           name: api
+          hostPort: 8080
         livenessProbe:
           httpGet:
             path: /health
@@ -59,8 +80,8 @@ spec:
           name: ssl-certs
       volumes:
       - name: traefik-config
-        secret:
-          secretName: traefik-config
+        configMap:
+          name: traefik-config
       - name: ssl-certs
-        hostPath:
-          path: /etc/acme
+        persistentVolumeClaim:
+          claimName: acme
